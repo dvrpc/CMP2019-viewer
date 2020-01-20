@@ -1238,7 +1238,7 @@ map.addLayer({
                           '<tr class="even">' +
                           '<th>High Crash Frequency</th><td>' + crash2 + '</td>' +
                            '<tr class="odd">' +
-                          '<th>Truck Travel Time Index </th><td>' + ttti + '</td>' +
+                          '<th>Truck Travel Time Index (TTTI) </th><td>' + ttti + '</td>' +
                           '<tr class="even">' +
                           '<th>Transportation Security</th><td>' + security + '</td>' +
                           '<tr class="odd">' +
@@ -1250,11 +1250,11 @@ map.addLayer({
                           '<tr class="even">' +
                           '<th>Connections 2045 Land Use Centers</th><td>' + landuse + '</td>' +
                           '<tr class="odd">' +
-                          '<th>Level of Travel Time Reliability </th><td>' + lottr + '</td>' +
+                          '<th>Level of Travel Time Reliability (LOTTR)</th><td>' + lottr + '</td>' +
                           '<tr class="even">' +
-                          '<th>Peak Hour Excessive Delay</th><td>' + phed + '</td>' +
+                          '<th>Peak Hour Excessive Delay (PHED)</th><td>' + phed + '</td>' +
                           '<tr class="odd">' +
-                          '<th>Truck Travel Time Reliability</th><td>' + tttr + '</td>' + 
+                          '<th>Truck Travel Time Reliability (TTTR)</th><td>' + tttr + '</td>' + 
                           '</tbody>' +
                           '<table>';
               content += newSet

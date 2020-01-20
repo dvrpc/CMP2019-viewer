@@ -376,7 +376,7 @@ cursor: ew-resize;
 		<div class="col-sm-5 col-lg-5" id="sidebar" style="padding: 10px; overflow: auto;">
 			 <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a href="#layers" data-toggle="tab"><i class="glyphicon glyphicon-road"></i>&nbsp;CMP Corridors</a></li>
-                <li id="PMBtn"><a href="#help" data-toggle="tab"><i class="glyphicon glyphicon-stats"></i>&nbsp;Performance Measures</a></li>
+                <li id="PMBtn"><a href="#help" data-toggle="tab"><i class="glyphicon glyphicon-stats"></i>&nbsp;CMP Objective Measures</a></li>
 				<li><a href="#Results" data-toggle="tab" ><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Info</a></li>
             </ul>
 		<div class="tab-content" style="padding-top: 10px;">
@@ -442,14 +442,14 @@ cursor: ew-resize;
                             <h5 style="background-color:#E0E0E0;height: 20px;padding: 2px;"><B>&nbsp;Corridor Opacity</B></h5>  
                            
                             <div class="map-overlay-inner">
-                            <label>Layer opacity: <span id="slider-value">100%</span></label>
+                            <label>Layer opacity: <span id="slider-value">80%</span></label>
                             <input
                             id="slider"
                             type="range"
                             min="0"
                             max="100"
                             step="0"
-                            value="100"
+                            value="80"
                             />
                             </div>
 
@@ -521,10 +521,10 @@ cursor: ew-resize;
                             <label><input name="optradio" type="radio" id="Env_PM" value='Env' onClick='toggleLayer(Env_PM);' >Low Green Infrastructure Screening Tool Scores</label>
                           </div>
                           <div class="radio">
-                            <label><input name="optradio" type="radio" id="InfEmerg_PM" value='InfEmerg' onClick='toggleLayer(InfEmerg_PM);' >Conections 2040 - Infill and Redevelopment Areas and Emergeing Growth Areas</label>
+                            <label><input name="optradio" type="radio" id="InfEmerg_PM" value='InfEmerg' onClick='toggleLayer(InfEmerg_PM);' >Conections 2045 - Infill and Redevelopment Areas and Emergeing Growth Areas</label>
                           </div>
                           <div class="radio">
-                            <label><input name="optradio" type="radio" id="PlanCntr_PM" value='PlanCntr' onClick='toggleLayer(PlanCntr_PM);'>Conections 2040 - Land Use</label>
+                            <label><input name="optradio" type="radio" id="PlanCntr_PM" value='PlanCntr' onClick='toggleLayer(PlanCntr_PM);'>Conections 2045 - Land Use Centers</label>
                           </div>
 
                           <h5><B>Integrate PM3 Measures </B><i class='glyphicon glyphicon-info-sign' id='info-icon' onclick='legendraw8()'></i></h5>
@@ -576,7 +576,7 @@ cursor: ew-resize;
 
 
 
-           <a href='javascript:void(0);' id='zoomtoregion'></a>
+        <a href='javascript:void(0);' id='zoomtoregion'></a>
 
         <div class="loading-panel stat-map" style="display:none;"><div class="spin-item"><div class="item-inner"><div class="item-loader-container"><div class="la-ball-spin-clockwise la-2x"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div></div></div>
   
@@ -913,11 +913,10 @@ cursor: ew-resize;
                                 </div>
                                   <div class="tab-pane fade" id="Crash2">
                                     <h4 class="modal-title" style="color:black;font-weight:bold">Crash Frequency </h4>
-                                    <p>This measure identifies road segments where the actual crash rate is four or more times the average rate for a type of roadway.  Crash rates are calculated as crashes per one-hundred million vehicles-miles traveled, and are analyzed over 5-years (2013-2017).  Roadway types include urban or rural, divided or undivided, limited access or no access control, and ones with roadway width and annual average daily traffic thresholds.  Average crash rates are assigned to each combination of roadway types. 
+                                    <p>This measure identifies road segments where the actual crash rate is five or more times the average rate for a type of roadway.  Crash rates are calculated as crashes per one-hundred million vehicles-miles traveled, and are analyzed over 5-years (2013-2017).  Roadway types include urban or rural, divided or undivided, limited access or no access control, and ones with roadway width and annual average daily traffic thresholds.  Average crash rates are assigned to each combination of roadway types. 
                                     </p>
                                     <p><b>Scoring</b><i>  (High Crash Frequency)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-red"></i> Road segments where the actual crash rate was four or more times the average rate for a type of roadway received 0.5 points. <br><br>
-                                    The measures to Create a Safer Transportation System can combine to total a maximum of 1.0 point per link.<br><br>
+                                    <i class="glyphicon glyphicon-minus legend-red"></i> This measure identifies road segments where the actual crash rate is four or more times the average rate for a type of roadway. Roadway types include urban or rural, divided or undivided, limited access or no access control, and ones with roadway width and AADT thresholds.  Crash rates are calculated as crashes per one-hundred million vehicles-miles traveled, and average crash rates are assigned for each combination of roadway types. Crashes are analyzed over 5-years (2013-2017).
                                     <i><b>Source:</b> NJDOT, PennDOT, DVRPC.</i>
                                     </p>
                                 </div>
@@ -954,9 +953,9 @@ cursor: ew-resize;
                             <div id="EXTODTabsContent" class="tab-content">
                                 <div class="tab-pane fade active in" id="TTTI">
                                     <h4 class="modal-title" style="color:black;font-weight:bold">Truck Travel Time Index (TTTI)</h4>
-                                    <p>This measure uses truck only travel times on the National Highway System from the NPMRDS data, separate from the PM3 measures, to identify congested locations due to truck traffic.  It is defined as the ratio of the observed truck travel time to the free-flow truck travel time by roadway segment.  Free-flow values are based on observed speeds for all time periods.  Roadways with a TTTI between 2.00 and 3.00 are considered moderately congested and ones greater than 3.00 are highly congested for weekdays peak hours 7-8 AM and 5-6 PM.
+                                    <p>This measure uses truck only travel times on the National Highway System from the National Performance Management Research Dataset (NPMRDS), separate from the PM3 measures, to identify congested locations due to truck traffic. It is defined as the ratio of the observed truck travel time to the free-flow truck travel time by roadway segment. Free-flow values are based on observed speeds for all time periods. Roadways with a TTTI between 2.00 and 3.00 are considered moderately congested and ones greater than 3.00 are highly congested for weekdays peak hours 7-8 AM and 5-6 PM.
                                     </p>
-                                    <p><b>Scoring</b><i>  (High Crash Severity)</i><br>
+                                    <p><b>Scoring</b><i>(Peak Hour, 7-8 AM or 5-6 PM, whichever is greater, all weekdays in 2017)</i><br>
                                      <ul>
                                           <li><i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Greater than 3.00 (highly congested)</li>
                                           <li><i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 2.00 - 3.00 (moderately congested)</li>
@@ -1005,7 +1004,7 @@ cursor: ew-resize;
                                     <p>This measure helps identify areas of the network where transportation preparedness for major events is most important.  These are often events that call for complex interregional cooperation.  The measure was developed with input from regional security agencies. 
                                     </p>
                                     <p><b>Scoring</b><i>  (Transportation Security)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-red"></i> Road links within a mile of the region’s most heavily-used bridges, passenger transit stations, and the general location of the largest military bases in the region, as well as road links within nuclear power plant evacuation zones received half a point. <br>
+                                    <i class="glyphicon glyphicon-minus legend-red"></i> Road links within one mile of the region’s most heavily-used bridges, passenger and freight rail bridges, passenger transit stations, and the general location of the largest military bases in the region, as well as road links within nuclear power plant evacuation zones received half a point. <br>
                                     The measures to Create a More Secure Transportation System can combine to total a maximum of 1 point per link.<br><br>
                                     <i><b>Source:</b> DVRPC.</i>
                                     </p>
@@ -1048,10 +1047,10 @@ cursor: ew-resize;
                                   <a href="#map" data-target="#Green" role="tab" data-toggle="tab">Low Green Infrastructure Screening Tool score (less harm to environment)</a>
                               </li>
                               <li>
-                                  <a href="#map" data-target="#Infill" role="tab" data-toggle="tab">Connections 2040 Infill and Redevelopment areas, Emerging Growth areas</a>
+                                  <a href="#map" data-target="#Infill" role="tab" data-toggle="tab">Connections 2045 Infill and Redevelopment areas, Emerging Growth areas</a>
                               </li>
                                <li>
-                                  <a href="#map" data-target="#Centers" role="tab" data-toggle="tab" >Connections 2040 Land Use Centers</a>
+                                  <a href="#map" data-target="#Centers" role="tab" data-toggle="tab" >Connections 2045 Land Use Centers</a>
                               </li>   
                           </ul>
                         </div>
@@ -1068,8 +1067,8 @@ cursor: ew-resize;
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="Infill">
-                                    <h4 class="modal-title" style="color:black">Connections 2040 Infill and Redevelopment areas, Emerging Growth areas</h4>
-                                    <p>This measure identifies road links within Infill and Redevelopment areas, and Emerging Growth areas from the Connections 2040 Long-Range Plan. After Land Use Centers, Infill and Redevelopment areas, followed by Emerging Growth area, are the priorities for investment.
+                                    <h4 class="modal-title" style="color:black">Connections 2045 Infill and Redevelopment areas, Emerging Growth areas</h4>
+                                    <p>This measure identifies road links within Infill and Redevelopment areas, and Emerging Growth areas from the Connections 2045 Long-Range Plan. After Land Use Centers, Infill and Redevelopment areas, followed by Emerging Growth area, are the priorities for investment.
                                     </p>
                                     <p><b>Scoring</b><i>  (Infill and Redevelopment areas, Emerging Growth areas)</i><br>
                                     <i class="glyphicon glyphicon-minus legend-blue"></i> Road links within Infill and Redevelopment areas, and Emerging Growth areas received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link. <br><br>
@@ -1077,8 +1076,8 @@ cursor: ew-resize;
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="Centers">
-                                    <h4 class="modal-title" style="color:black">Connections 2040 Land Use Centers</h4>
-                                    <p>This measure identifies road links within Land Use Centers from the Connections 2040 Long-Range Plan. Centers are the highest priority areas for investment in the regional transportation network.   
+                                    <h4 class="modal-title" style="color:black">Connections 2045 Land Use Centers</h4>
+                                    <p>This measure identifies road links within Land Use Centers from the Connections 2045 Long-Range Plan. Centers are the highest priority areas for investment in the regional transportation network.   
                                     </p>    
                                    <p><b>Scoring</b><i>  (Land Use Centers)</i><br>
                                     <i class="glyphicon glyphicon-minus legend-blue"></i> Road links within Land Use Centers received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link.<br><br>
@@ -1101,52 +1100,63 @@ cursor: ew-resize;
             <div class="modal-content" style="overflow:hidden">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title modal-legend">Integrate PM3 Measures</h4>
-                    <p>Transportation projects should support the four core plan principles of managing growth and protecting the environment; creating livable communities; building the economy; and establishing a modern, multimodal transportation system. In particular, investments should serve areas that are either already developed or designated as appropriate for future growth, encourage growth and reinvestment in the region’s Centers, have limited environmental impact, and support key economic sectors. Potential projects are evaluated to make sure that they help achieve the key principles outlined in the Plan.</p>
+                    <h4 class="modal-title modal-legend">Integrate National Performance Management Measures (PM3)</h4>
+                    <p>New PM3 measures adopted by FHWA in May 2017 as part of the FAST Act help better align proposed project improvements through performance based planning and programming.  Baseline and required targets are established at the statewide and urbanized area (UZA) level with the intention of programming projects to meet the regional targets.  While the baseline and target values are established at the statewide and UZA level, they are calculated at the roadway segment level from the National Performance Management  Research Dataset (NPMRDS), which includes only roadways on the National Highway System (NHS). This roadway data is utilized in the CMP to identify congested locations, and to help prioritize congested corridor and subcorridor areas, and the most congested focus roadway facilities, and bottlenecks.</p>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-4">
                           <ul id="reduceTabs" class="nav nav-tabs nav-stacked nav-left">
                               <li class="active">
-                                  <a href="#map" data-target="#Green" role="tab" data-toggle="tab">Low Green Infrastructure Screening Tool score (less harm to environment)</a>
+                                  <a href="#map" data-target="#LOTTR" role="tab" data-toggle="tab">Level of Travel Time Reliability</a>
                               </li>
                               <li>
-                                  <a href="#map" data-target="#Infill" role="tab" data-toggle="tab">Connections 2040 Infill and Redevelopment areas, Emerging Growth areas</a>
+                                  <a href="#map" data-target="#TTTR" role="tab" data-toggle="tab">Truck Travel Time Reliability</a>
                               </li>
                                <li>
-                                  <a href="#map" data-target="#Centers" role="tab" data-toggle="tab" >Connections 2040 Land Use Centers</a>
+                                  <a href="#map" data-target="#PHED" role="tab" data-toggle="tab" >Peak Hour Excessive Delay</a>
                               </li>   
                           </ul>
                         </div>
                         <div class="col-xs-8">
                             <div id="EXTODTabsContent" class="tab-content">
-                                <div class="tab-pane fade active in" id="Green">
-                                    <h4 class="modal-title" style="color:black;font-weight:bold">Low Green Infrastructure Screening Tool score (less harm to environment)</h4>
-                                    <p>The Green Infrastructure Screening Tool (GIST) was developed to analyze the environmental impact of transportation projects for the Long-Range Plan.  It incorporates a wide range of environmental factors. This measure was used to identify road segments in areas where investment will likely have fewer environmental impacts.          
+                                <div class="tab-pane fade active in" id="LOTTR">
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Level of Travel Time Reliability (LOTTR)</h4>
+                                    <p>The measure is calculated by roadway segment, and indicates reliability measured by the ratio of the 80th percent travel time to a “normal” travel time (50th percent).  The threshold criteria for reliability is 1.50; anything greater is considered unreliable.  This measure is calculated for four peak hour time periods: weekdays 6-10 am, 10 am to 4 pm, and 4-8 pm; and weekends 6 am to 8 pm.  The time period with the greatest unreliability is used as the criteria for determining reliability by roadway segment.  For purposes of the CMP, a LOTTR value between 1.50 and 2.00 is considered moderately unreliable and greater than 2.00 as most unreliable.     
                                     </p>
-                                    <p><b>Scoring</b><i>  (Low GIST score))</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-blue"></i> Road links within the lowest impact range (0-2) of GIST scores received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link.<br><br>
-                                    <i><b>Source:</b> DVRPC. </i>
+                                    <p><b>Scoring</b><i>  (LOTTR)</i><br>
+                                         <ul>
+                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (1.0) = Greater than 2.00 (highly congested)</li>
+                                          <li><i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 1.50 - 2.00 (moderately congested)</li>
+                                        </ul>
+                                    <p>All PM3 traffic reliability and congestion measures can combine to total a maximum of 2.0 points per link.</p>
+                                    <i><b>Sources:</b> FHWA (see 23 CFR 490.507(a)(1,2)), Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software
+. </i>
 
                                     </p>
                                 </div>
-                                <div class="tab-pane fade" id="Infill">
-                                    <h4 class="modal-title" style="color:black">Connections 2040 Infill and Redevelopment areas, Emerging Growth areas</h4>
-                                    <p>This measure identifies road links within Infill and Redevelopment areas, and Emerging Growth areas from the Connections 2040 Long-Range Plan. After Land Use Centers, Infill and Redevelopment areas, followed by Emerging Growth area, are the priorities for investment.
+                                <div class="tab-pane fade" id="TTTR">
+                                    <h4 class="modal-title" style="color:black">Truck Travel Time Reliability (TTTR)</h4>
+                                    <p>This measure helps to assess freight reliability movements on the interstate system within the region.  The TTTR Index indicates the reliability of the roadway for freight movement measured by the ratio of the 95th percentile travel time to a “normal” travel time (50th percentile).  This measure is calculated for five peak hour time periods: weekdays 6-10 am, 10 am to 4 pm, and 4-8 pm; every day from 8 pm to 6 am; and weekends 6 am to 8 pm.  The time period with the highest TTRR is used as the criteria for determining reliability.  For purposes of the CMP, a TTTR value greater than the regional average is considered unreliable.
                                     </p>
-                                    <p><b>Scoring</b><i>  (Infill and Redevelopment areas, Emerging Growth areas)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-blue"></i> Road links within Infill and Redevelopment areas, and Emerging Growth areas received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link. <br><br>
-                                    <i><b>Source:</b> DVRPC. </i>
+                                    <p><b>Scoring</b><i>(TTTR)</i><br>
+                                         <ul>
+                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (0.5) = 1x or more times the regional average</li>
+                                        </ul>
+                                        <p>All PM3 traffic reliability and congestion measures can combine to total a maximum of 2.0 points per link.</p>
+                                    <i><b>Source:</b> FHWA (see 23 CFR 490.607), Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software</i>
                                     </p>
                                 </div>
-                                <div class="tab-pane fade" id="Centers">
-                                    <h4 class="modal-title" style="color:black">Connections 2040 Land Use Centers</h4>
-                                    <p>This measure identifies road links within Land Use Centers from the Connections 2040 Long-Range Plan. Centers are the highest priority areas for investment in the regional transportation network.   
+                                <div class="tab-pane fade" id="PHED">
+                                    <h4 class="modal-title" style="color:black">Peak Hour Excessive Delay (PHED)</h4>
+                                    <p>Travel times, hourly traffic volumes, posted speed limits, mode shares (passenger vehicles, transit and trucks), and average vehicle occupant factors are used to calculate excessive delay at the roadway segment level for peak periods 6-10 am and 3-7 pm, and then aggregated to the UZA. PHED values two or more times the regional average are considered high PHED.
                                     </p>    
-                                   <p><b>Scoring</b><i>  (Land Use Centers)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-blue"></i> Road links within Land Use Centers received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link.<br><br>
-                                    <i><b>Source:</b> DVRPC. </i>
+                                   <p><b>Scoring</b><i> (PHED)</i><br>
+                                        <ul>
+                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (0.5) = 2x or more times the regional average</li>
+                                        </ul>
+                                        <p>All PM3 traffic reliability and congestion measures can combine to total a maximum of 2.0 points per link.</p>
+                                    <i><b>Source:</b>FHWA (see 23 CFR 490.707(a)), Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software</i>
                                     </p>
                                 </div>
                             </div>
