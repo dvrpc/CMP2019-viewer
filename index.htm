@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css">
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/table.css" />
 
 	<!-- Mapbox-->
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
@@ -674,7 +675,7 @@ cursor: ew-resize;
                         <div class="clearfix">
                             <div class="row">
                                 <div class="col-xs-8">
-                                    <b>Download Data - </b> Directly download the CMP Corrdior and Performance Measures layers from the links below.
+                                    <b>Download Data - </b> Directly download the CMP Corrdior and Objective Measures layers from the links below.
                                     <pre data-initialized="true"><code><a href="https://dvrpc-dvrpcgis.opendata.arcgis.com/datasets?q=cmp&sort_by=relevance&geometry=-79.253%2C39.466%2C-69.283%2C40.726" target="_new">https://dvrpc-dvrpcgis.opendata.arcgis.com/datasets?q=cmp&sort_by=relevance&geometry=-79.253%2C39.466%2C-69.283%2C40.726</a></code></pre>
                                 </div>
                                 <div class="col-xs-4 text-right"><img src="img/ags_connect.png" alt=""></div>
@@ -684,7 +685,7 @@ cursor: ew-resize;
                                 <div class="col-xs-8">
                                     <b>ArcGIS for Desktop - </b> Copy and paste the URL below to access our ArcGIS Server map services.
                                     <pre data-initialized="true"><code>https://arcgis.dvrpc.org/arcgis/rest/services</code></pre>
-                                    - CMP Corridors are located in the  'Transportaion' folder and <br> Performance Measures are located in the 'AppData' folder.
+                                    - CMP Corridors are located in the  'Transportaion' folder and <br> Objective Measures are located in the 'AppData' folder.
                                 </div>
                                 <div class="col-xs-4 text-right"><img src="https://www.dvrpc.org/webmaps/img/dataportal/Transportation_service.png" alt=""></div>
                             </div>
@@ -1175,13 +1176,13 @@ cursor: ew-resize;
             <div class="modal-content">
                 <div class="modal-header" style="background-color:#0074ad">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                     <h4 class="modal-title" ><strong>Performance Measures</strong> </h4>
+                     <h4 class="modal-title" ><strong>Objective Measures</strong> </h4>
                 </div>
 
                 <div class="modal-body">
                   <div class="clearfix">
-                    <p><h3 style="color:#494949;">- Zoom in to desired location before viewing Performance Measure roadway layers </h3>
-                    <h3 style="color:#494949;">- Toggle on/off CMP corridors if you wish to only view Performance Measure layers or use the opacity slider bar  <img id="popup" src="img/opacity.png" title="opacity slider"/> to decrease/increase the transparency level of the CMP corridors.
+                    <p><h3 style="color:#494949;">- Zoom in to desired location before viewing CMP Objective Measure roadway layers </h3>
+                    <h3 style="color:#494949;">- Toggle on/off CMP corridors if you wish to only view CMP Objective Measure layers or use the opacity slider bar  <img id="popup" src="img/opacity.png" title="opacity slider"/> to decrease/increase the transparency level of the CMP corridors.
                     </h3>
                     </p>
                   </div> 
@@ -1199,6 +1200,7 @@ cursor: ew-resize;
 
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/numeral.js"></script>
 
   </body>
 </html>

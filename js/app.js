@@ -1194,13 +1194,18 @@ map.addLayer({
             var content = '';
 
             for(var i = 0; i<features.length; i++) {
+
+
+
               var roadname = features[i].properties.RoadName
               var dir = features[i].properties.Bearing
               var tti = features[i].properties.TTI
+              var tti_info = numeral(features[i].properties.TTIHGHPKHR).format('(0,0.0)')
               var vc = features[i].properties.LRP_VC
               var transcore = features[i].properties.TransScore
               var rail = features[i].properties.RailPoint
               var pti = features[i].properties.PTI
+              var pti_info = numeral(features[i].properties.PTIHGHPKHR).format('(0,0.0)')
               var nhs = features[i].properties.NHSPoint
               var transit = features[i].properties.TransitPoi 
               var crash1 = features[i].properties.HighCrSev
@@ -1214,15 +1219,23 @@ map.addLayer({
               var lottr = features[i].properties.LOTTR
               var phed = features[i].properties.PHED
               var tttr = features[i].properties.TTTR
-         
-              var newSet = '<div id="pm_info"><h3 style="background-color:#E0E0E0"><i class="glyphicon glyphicon-stats"></i>&nbsp; Performance Measures</h3>The scores below are for the selected roadway segments<br>' +
-                          '<B>Road Name:</B> ' + roadname + 
-                          '<br><B>Direction:</B> ' + dir + 
+
+        if (features[i].properties.Bearing === 'N' ){ var dirT = " (North Bound)"; }
+        else if (features[i].properties.Bearing === 'S' ){ var dirT = " (South Bound) ";}
+        else if (features[i].properties.Bearing === 'E' ){ var dirT = " (East Bound) ";}
+        else if (features[i].properties.Bearing === 'W' ){ var dirT = " (West Bound) " ;}
+        else var dirT = "";
+
+              var newSet = '<div id="pm_info"><h3 style="background-color:#E0E0E0"><i class="glyphicon glyphicon-stats"></i>&nbsp; Objective Measures</h3>The scores below are for the selected roadway segments<br>' +
+                          '<B>Road Name:</B> ' + roadname  
+                           + dirT + 
+                      //     dirT
                     //      '<br><a href="https://maps.google.com/maps?q=&layer=c&cbll=' + lat + ', ' + lng +'&cbp=" target="_new">Launch Google Streetview near this location</a><br>'+
                           '<table id="crashtable">' +
                           '<tbody>' +
                           '<tr class="odd">' +
-                          '<th>Travel Time Index (TTI)</th><td>' + tti + '</td>' +
+                         '<th>Travel Time Index (TTI)</th><td>' + tti + ' ('+ tti_info +')</td>' +
+                     //     '<th>Travel Time Index (TTI)</th><td>' + tti + '</td>' +
                           '<tr class="even">' +
                           '<th>Anticipated Growth in V/C</th><td>' + vc + '</td>' +
                           '<tr class="odd">' +
@@ -1357,7 +1370,7 @@ closeOnClick: false
 var hoverTooltip = function(e) {
     popup
     .setLngLat(e.lngLat)
-    .setHTML(e.features.map(function(feature) { return feature.properties.NAME + '('+ feature.properties.GIS_ID +')'; }).join(', '))
+    .setHTML(e.features.map(function(feature) { return feature.properties.NAME + ' ('+ feature.properties.GIS_ID +')'; }).join(', '))
     .addTo(map);
 
     currentHover = e.features[0].id;
