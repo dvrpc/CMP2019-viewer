@@ -1175,6 +1175,45 @@ map.addLayer({
           }
       });
 
+/// Highlight Segment
+
+ map.on('click', function (e) {
+    var bbox = [[e.point.x - 5, e.point.y - 5],[e.point.x + 5, e.point.y + 5]];
+    var features = map.queryRenderedFeatures(bbox, {layers: ['TTI','LRP_VC','TSCORE','PTI','CTN','TRANSIT', 'CRASH1', 'CRASH2','TTTI', 'HvyTran', 'HHDen', 'Env', 'InfEmerg', 'PlanCntr', 'LOTTR', 'PHED', 'TTTR']});
+
+    if (!features.length) {
+        return;
+    }
+    if (typeof map.getLayer('selectedRoad') !== "undefined" ){         
+        map.removeLayer('selectedRoad')
+        map.removeSource('selectedRoad');   
+    }
+
+    for(var i = 0; i<features.length; i++) {
+    //I think you could add the vector tile feature to the map, but I'm more familiar with JSON
+    console.log(features);
+    var feature = features[0];
+
+    map.addSource('selectedRoad', {
+        "type":"geojson",
+        "data": feature.toJSON()
+    });
+    map.addLayer({
+        "id": "selectedRoad",
+        "type": "line",
+        "source": "selectedRoad",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "yellow",
+            "line-width": 8
+        }
+    });
+  }
+});
+
 // Performance Measure Query
       map.on('click', function (e) {
       
@@ -1183,6 +1222,8 @@ map.addLayer({
 
             if (!features.length) {
                    var content = '';
+          //          map.removeLayer('selectedRoad')
+          //        map.removeSource('selectedRoad');   
               //  console.log(e.lngLat);
           //    let numbers = e.lngLat;
          //     numbers = JSON.parse(numbers);
@@ -1190,12 +1231,20 @@ map.addLayer({
            //  alert (e.lngLat);
               return;
             }
+
             $('#myTab a[href="#Results"]').tab('show');
             var content = '';
 
+        
+
             for(var i = 0; i<features.length; i++) {
+         //   console.log(features);
 
-
+         //   for (let index = 0; index < a.length; ++index) {
+               //let value = a[index];
+         //      var feature = features[i];
+           //    console.log(feature);
+           //   var feature = features[0];
 
               var roadname = features[i].properties.RoadName
               var dir = features[i].properties.Bearing
@@ -1220,11 +1269,11 @@ map.addLayer({
               var phed = features[i].properties.PHED
               var tttr = features[i].properties.TTTR
 
-        if (features[i].properties.Bearing === 'N' ){ var dirT = " (North Bound)"; }
-        else if (features[i].properties.Bearing === 'S' ){ var dirT = " (South Bound) ";}
-        else if (features[i].properties.Bearing === 'E' ){ var dirT = " (East Bound) ";}
-        else if (features[i].properties.Bearing === 'W' ){ var dirT = " (West Bound) " ;}
-        else var dirT = "";
+              if (features[i].properties.Bearing === 'N' ){ var dirT = " (North Bound)"; }
+              else if (features[i].properties.Bearing === 'S' ){ var dirT = " (South Bound) ";}
+              else if (features[i].properties.Bearing === 'E' ){ var dirT = " (East Bound) ";}
+              else if (features[i].properties.Bearing === 'W' ){ var dirT = " (West Bound) " ;}
+              else var dirT = "";
 
               var newSet = '<div id="pm_info"><h3 style="background-color:#E0E0E0"><i class="glyphicon glyphicon-stats"></i>&nbsp; Objective Measures</h3>The scores below are for the selected roadway segments<br>' +
                           '<B>Road Name:</B> ' + roadname  
@@ -1274,7 +1323,12 @@ map.addLayer({
             }
 
             info.innerHTML = content;
+           
       });
+
+  
+
+
 
     });
 
@@ -1326,12 +1380,11 @@ $(document).ready(function() {
 
 // CMP Corricor Query
 map.on('click', function (e) {
- //  (resetInfo)? $('#cmp_info').hide() : resetInfo = true;
+//  (resetInfo)? $('#cmp_info').hide() : resetInfo = true;
     var bbox = [[e.point.x - 5, e.point.y - 5],[e.point.x + 5, e.point.y + 5]];
     var features = map.queryRenderedFeatures(bbox, {layers: ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17']});
 
       if (!features.length) {
-        console.log(features.length);
           //  var contentCMP = '';
     var contentCMP = '';
         infosidebar.innerHTML = contentCMP;
@@ -1360,6 +1413,7 @@ map.on('click', function (e) {
       infosidebar.innerHTML = contentCMP;
 
 });
+
 
 // Create a popup, but don't add it to the map yet.
 var popup = new mapboxgl.Popup({
