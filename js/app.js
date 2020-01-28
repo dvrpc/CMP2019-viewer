@@ -1177,7 +1177,7 @@ map.addLayer({
 
 /// Highlight Segment
 
- map.on('click', function (e) {
+/* map.on('click', function (e) {
     var bbox = [[e.point.x - 5, e.point.y - 5],[e.point.x + 5, e.point.y + 5]];
     var features = map.queryRenderedFeatures(bbox, {layers: ['TTI','LRP_VC','TSCORE','PTI','CTN','TRANSIT', 'CRASH1', 'CRASH2','TTTI', 'HvyTran', 'HHDen', 'Env', 'InfEmerg', 'PlanCntr', 'LOTTR', 'PHED', 'TTTR']});
 
@@ -1213,7 +1213,7 @@ map.addLayer({
     });
   }
 });
-
+*/
 // Performance Measure Query
       map.on('click', function (e) {
       
@@ -1222,20 +1222,16 @@ map.addLayer({
 
             if (!features.length) {
                    var content = '';
-          //          map.removeLayer('selectedRoad')
-          //        map.removeSource('selectedRoad');   
-              //  console.log(e.lngLat);
-          //    let numbers = e.lngLat;
-         //     numbers = JSON.parse(numbers);
-        //    alert(numbers);
-           //  alert (e.lngLat);
+           //    console.log(e.lngLat);
+           //    let numbers = e.lngLat;
+           //    numbers = JSON.parse(numbers);
+           //    alert(numbers);
+           //    alert (e.lngLat);
               return;
             }
 
             $('#myTab a[href="#Results"]').tab('show');
             var content = '';
-
-        
 
             for(var i = 0; i<features.length; i++) {
          //   console.log(features);
@@ -1326,181 +1322,174 @@ map.addLayer({
            
       });
 
-  
-
-
-
     });
 
 
-slider.addEventListener('input', function(e) {
-  //slide(e);
-  let a = ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17'];
-for (let index = 0; index < a.length; ++index) {
-    let value = a[index];
-      map.setPaintProperty(value,'fill-opacity',parseInt(e.target.value, 10) / 100);
-// Value indicator
-sliderValue.textContent = e.target.value + '%';
-}
-});
-
-// Toggle individual CMP corridor layers
-$('input:checkbox[name="overlayLayers"]').on('change', function(e) {
-    var id = this.id;
-
-   if ( id === 'all' ) {
-  //  alert("DUDE!");
-  //  map.setLayoutProperty(this.id,'visibility', e.target.checked ? 'visible' : 'none');
-    } 
-    else if ( id === this.id ) {
-  //  map.setLayoutProperty('PA2','visibility', e.target.checked ? 'visible' : 'none');
-    map.setLayoutProperty(this.id,'visibility', e.target.checked ? 'visible' : 'none');
-    } 
-    else {
-  //     map.setLayoutProperty(id,'visibility', 'visible');
-       return id;
-    }
-});
-
-
-//Document Ready
-$(document).ready(function() {
-    //layer group check all functionality
-    $('input.checked_all').on('change', function() {
-        //var listPanel = $(this)
-        var $element = $(this);
-        if ($element.prop('checked') == true) {
-            $element.siblings('.checkbox').find('input').prop('checked', true).change();
-        } else {
-            $element.siblings('.checkbox').find('input').prop('checked', false).change();
+        slider.addEventListener('input', function(e) {
+          //slide(e);
+          let a = ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17'];
+        for (let index = 0; index < a.length; ++index) {
+            let value = a[index];
+              map.setPaintProperty(value,'fill-opacity',parseInt(e.target.value, 10) / 100);
+        // Value indicator
+        sliderValue.textContent = e.target.value + '%';
         }
-    });
+        });
 
-});
+        // Toggle individual CMP corridor layers
+        $('input:checkbox[name="overlayLayers"]').on('change', function(e) {
+            var id = this.id;
 
-// CMP Corricor Query
-map.on('click', function (e) {
-//  (resetInfo)? $('#cmp_info').hide() : resetInfo = true;
-    var bbox = [[e.point.x - 5, e.point.y - 5],[e.point.x + 5, e.point.y + 5]];
-    var features = map.queryRenderedFeatures(bbox, {layers: ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17']});
-
-      if (!features.length) {
-          //  var contentCMP = '';
-    var contentCMP = '';
-        infosidebar.innerHTML = contentCMP;
-        return;
-      }
-      $('#myTab a[href="#Results"]').tab('show');
-      var contentCMP = '';
-
-      for(var i = 0; i<features.length; i++) {
-        var cmp = features[i].properties.CMP_ID
-        var subid = features[i].properties.SUB_ID 
-        var banner = features[i].properties.WEB_COLOR
-        var name = features[i].properties.NAME
-        var subname = features[i].properties.SUBNAME
-        var priority = features[i].properties.PRIORITY
-        var shield = features[i].properties.SHIELD
-        var state = features[i].properties.STATE
+           if ( id === 'all' ) {
+          //  alert("DUDE!");
+          //  map.setLayoutProperty(this.id,'visibility', e.target.checked ? 'visible' : 'none');
+            } 
+            else if ( id === this.id ) {
+          //  map.setLayoutProperty('PA2','visibility', e.target.checked ? 'visible' : 'none');
+            map.setLayoutProperty(this.id,'visibility', e.target.checked ? 'visible' : 'none');
+            } 
+            else {
+          //     map.setLayoutProperty(id,'visibility', 'visible');
+               return id;
+            }
+        });
 
 
-    var newSet = '<h4 style="color:white;background-color:' + banner + '"><div class="label"><img class="shield" src="' + shield + ' ">' + name + '</div></h4>' + "<div class='labelfield'><b>Subcorridor ID/Name: </b>" + cmp + subid + " - " + subname + "<br>" + "<div class='labelfield'><b>Priority Subcorridor: </b>" + priority + "</div>" +
-      '<img style="margin:0px 0px 5px 0px" src="https://www.dvrpc.org/asp/TIPsearch/2015/PA/img/document.png"/>&nbsp; - <a class="one" href="https://www.dvrpc.org/asp/cmp/'+ state+'CMP2019Detail.asp?corridor='+cmp+'&subcorridor='+ subid + '" target="_blank"> ' + "View Subcorridor Information" + "</a><br>" 
-                  ;
+        //Document Ready
+        $(document).ready(function() {
+            //layer group check all functionality
+            $('input.checked_all').on('change', function() {
+                //var listPanel = $(this)
+                var $element = $(this);
+                if ($element.prop('checked') == true) {
+                    $element.siblings('.checkbox').find('input').prop('checked', true).change();
+                } else {
+                    $element.siblings('.checkbox').find('input').prop('checked', false).change();
+                }
+            });
 
-        contentCMP += newSet
-      }
-      infosidebar.innerHTML = contentCMP;
+        });
 
-});
+        // CMP Corricor Query
+        map.on('click', function (e) {
+        //  (resetInfo)? $('#cmp_info').hide() : resetInfo = true;
+            var bbox = [[e.point.x - 5, e.point.y - 5],[e.point.x + 5, e.point.y + 5]];
+            var features = map.queryRenderedFeatures(bbox, {layers: ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17']});
+
+              if (!features.length) {
+                  //  var contentCMP = '';
+            var contentCMP = '';
+                infosidebar.innerHTML = contentCMP;
+                return;
+              }
+              $('#myTab a[href="#Results"]').tab('show');
+              var contentCMP = '';
+
+              for(var i = 0; i<features.length; i++) {
+                var cmp = features[i].properties.CMP_ID
+                var subid = features[i].properties.SUB_ID 
+                var banner = features[i].properties.WEB_COLOR
+                var name = features[i].properties.NAME
+                var subname = features[i].properties.SUBNAME
+                var priority = features[i].properties.PRIORITY
+                var shield = features[i].properties.SHIELD
+                var state = features[i].properties.STATE
 
 
-// Create a popup, but don't add it to the map yet.
-var popup = new mapboxgl.Popup({
-closeButton: false,
-closeOnClick: false
-});
+            var newSet = '<h4 style="color:white;background-color:' + banner + '"><div class="label"><img class="shield" src="' + shield + ' ">' + name + '</div></h4>' + "<div class='labelfield'><b>Subcorridor ID/Name: </b>" + cmp + subid + " - " + subname + "<br>" + "<div class='labelfield'><b>Priority Subcorridor: </b>" + priority + "</div>" +
+              '<img style="margin:0px 0px 5px 0px" src="https://www.dvrpc.org/asp/TIPsearch/2015/PA/img/document.png"/>&nbsp; - <a class="one" href="https://www.dvrpc.org/asp/cmp/'+ state+'CMP2019Detail.asp?corridor='+cmp+'&subcorridor='+ subid + '" target="_blank"> ' + "View Subcorridor Information" + "</a><br>" 
+                          ;
 
-var hoverTooltip = function(e) {
-    popup
-    .setLngLat(e.lngLat)
-    .setHTML(e.features.map(function(feature) { return feature.properties.NAME + ' ('+ feature.properties.GIS_ID +')'; }).join(', '))
-    .addTo(map);
+                contentCMP += newSet
+              }
+              infosidebar.innerHTML = contentCMP;
 
-    currentHover = e.features[0].id;
+        });
 
-    if (hoveredStateId !== currentHover) {
-      // remove paint (exclude first pass where hoverdStateId is undefined)
-      if(hoveredStateId){
-        map.setFeatureState(
-        { source: 'CMP_PA', id: hoveredStateId },
-        { hover: false }
-      );
-      }
 
-      // reassign hoverste and paint again
-      hoveredStateId = currentHover
-      map.setFeatureState(
-      { source: 'CMP_PA', id: currentHover },
-      { hover: true }
-      );
-    }
-}
+        // Create a popup, but don't add it to the map yet.
+        var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+        });
 
-var unhoverTooltip = function(e) {
-    map.getCanvas().style.cursor = '';
-    popup.remove();
+        var hoverTooltip = function(e) {
+            popup
+            .setLngLat(e.lngLat)
+            .setHTML(e.features.map(function(feature) { return feature.properties.NAME + ' ('+ feature.properties.GIS_ID +')'; }).join(', '))
+            .addTo(map);
 
-  if (hoveredStateId) {
-  map.setFeatureState(
-  { source: 'CMP_PA', id: hoveredStateId },
-  { hover: false }
-  );
-  }
-  hoveredStateId = null;
-}
+            currentHover = e.features[0].id;
 
-var hoverTooltipNJ = function(e) {
-    popup
-    .setLngLat(e.lngLat)
-    .setHTML(e.features.map(function(feature) { return feature.properties.NAME + '('+ feature.properties.GIS_ID +')'; }).join(', '))
-    .addTo(map);
+            if (hoveredStateId !== currentHover) {
+              // remove paint (exclude first pass where hoverdStateId is undefined)
+              if(hoveredStateId){
+                map.setFeatureState(
+                { source: 'CMP_PA', id: hoveredStateId },
+                { hover: false }
+              );
+              }
 
-    currentHover = e.features[0].id;
+              // reassign hoverste and paint again
+              hoveredStateId = currentHover
+              map.setFeatureState(
+              { source: 'CMP_PA', id: currentHover },
+              { hover: true }
+              );
+            }
+        }
 
-    if (hoveredStateId !== currentHover) {
-      // remove paint (exclude first pass where hoverdStateId is undefined)
-      if(hoveredStateId){
-        map.setFeatureState(
-        { source: 'CMP_NJ', id: hoveredStateId },
-        { hover: false }
-      );
-      }
+        var unhoverTooltip = function(e) {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
 
-      // reassign hoverste and paint again
-      hoveredStateId = currentHover
-      map.setFeatureState(
-      { source: 'CMP_NJ', id: currentHover },
-      { hover: true }
-      );
-    }
-}
+          if (hoveredStateId) {
+          map.setFeatureState(
+          { source: 'CMP_PA', id: hoveredStateId },
+          { hover: false }
+          );
+          }
+          hoveredStateId = null;
+        }
 
-var unhoverTooltipNJ = function(e) {
-    map.getCanvas().style.cursor = '';
-    popup.remove();
+        var hoverTooltipNJ = function(e) {
+            popup
+            .setLngLat(e.lngLat)
+            .setHTML(e.features.map(function(feature) { return feature.properties.NAME + '('+ feature.properties.GIS_ID +')'; }).join(', '))
+            .addTo(map);
 
-  if (hoveredStateId) {
-  map.setFeatureState(
-  { source: 'CMP_NJ', id: hoveredStateId },
-  { hover: false }
-  );
-  }
-  hoveredStateId = null;
-}
+            currentHover = e.features[0].id;
 
-// PM CODE
+            if (hoveredStateId !== currentHover) {
+              // remove paint (exclude first pass where hoverdStateId is undefined)
+              if(hoveredStateId){
+                map.setFeatureState(
+                { source: 'CMP_NJ', id: hoveredStateId },
+                { hover: false }
+              );
+              }
 
+              // reassign hoverste and paint again
+              hoveredStateId = currentHover
+              map.setFeatureState(
+              { source: 'CMP_NJ', id: currentHover },
+              { hover: true }
+              );
+            }
+        }
+
+        var unhoverTooltipNJ = function(e) {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+
+          if (hoveredStateId) {
+          map.setFeatureState(
+          { source: 'CMP_NJ', id: hoveredStateId },
+          { hover: false }
+          );
+          }
+          hoveredStateId = null;
+        }
 
 // Placeholder hack for IE
 if (navigator.appName == "Microsoft Internet Explorer") {
