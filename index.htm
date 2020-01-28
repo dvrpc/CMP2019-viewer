@@ -628,7 +628,7 @@ cursor: ew-resize;
                             Manager <br/>
                             Congestion Management Programs<br/>
                             Phone: 215-238-2865 <br/>
-                            <a class="one" href="mailto:tedingner@dvrpc.org">tedingner@dvrpc.org </a> 
+                            <a class="one" href="mailto:tedinger@dvrpc.org">tedinger@dvrpc.org </a> 
                             </p>		
 						</div>
 					</div>
@@ -649,7 +649,7 @@ cursor: ew-resize;
                     <p>
                     - Click on the map to identify and view CMP subcorridor and segmented roadway information.<br><br>
                     - If the area you select includes overlapping subcorridors, those subcorrdiors will be listed in the results tab.<br><br>
-                    - Click "Info" to view detailed information about individual subcorridors amd roadway segments, including CMP strategies and other pertinent information.<br><br>
+                    - Click "Info" to view detailed information about individual subcorridors and roadway segments, including CMP strategies and other pertinent information.<br><br>
                     - Clicking "Zoom To Subcorridor" will automatically zoom to the full extent of that selected subcorridor. 
                     </p>
                     <h4>Map Navigation:</h4>
@@ -657,7 +657,7 @@ cursor: ew-resize;
                     Double-clicking on an area will also zoom in. If you hold down the <B>Shift Key </B>and drag a <Font color="red">box </Font>on the map, it will zoom to the area drawn.<br><br> 
                     - Use the menu on the left to turn on/off selected corridors by state. You can turn all of the corridors on/off quickly by clicking on Select/Clear All.<br><br>
                     - Use the 'Corridor Opacity' slider bar <img id="popup" src="img/opacity.png" title="opacity slider"/> to decrease/increase the transparency level of the CMP corridors.<br><br>
-                    - Click the <b>zoom to region</b> button <img src="css/img/region.png" title="zoom to region" style="" /> to zoom to the initial map extent. 
+                    - Click the <b>zoom to region</b> button <img src="css/img/dvrpc_bug.png" title="zoom to region" style="height:23px;width:23px;" /> to zoom to the initial map extent. 
                     </p>
         
                 </div>
@@ -725,8 +725,8 @@ cursor: ew-resize;
                                     </p>
                                     <p><b>Scoring</b><i>  (Peak Hour TTI, 7-8 AM or 5-6 PM, whichever is greater, all weekdays in 2017)</i>
                                         <ul>
-                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Greater than 1.5 (highly congested)</li>
-                                          <li><i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 1.2 - 1.5 (moderately congested as expected at peak hour)</li>
+                                          <i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Greater than 1.5 (highly congested)<br>
+                                          <i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 1.2 - 1.5 (moderately congested as expected at peak hour)
                                         </ul>
                                     All of the measures to Reduce Congestion can combine to total a maximum of 2 points per link.<br><br>
                                     <i><b>Source:</b> INRIX, DVRPC. </i>
@@ -734,7 +734,7 @@ cursor: ew-resize;
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="Growth">
-                                    <h4 class="modal-title" style="color:black">Anticipated Growth in V/C using the DVRPC Travel Model </h4>
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Anticipated Growth in V/C using the DVRPC Travel Model </h4>
                                     <p>This measure indicates where congestion will likely increase in the future on a road segment during the peak hour (7-8 AM and 5-6 PM). It gives added weight to locations that are already moderately congested (V/C 0.5 or more) in the model base year (2015).<br><br>
 
                                     The analysis uses the 2015 and 2045 DVRPC travel model runs, the same as used for the Long-Range Plan (Connections 2045). It identifies potential future congested roadways using the 2045 socio-economic forecasts, and any projects approved for funding.  This analysis indicates traffic congestion at the regional level, and is not intended to provide precise congestion by segment. Accuracy at the segment level is estimated at +/- 15%.<br><br>
@@ -745,8 +745,8 @@ cursor: ew-resize;
                                     </p>
                                     <p><b>Scoring</b><i>  (Anticipated Growth in V/C in the 2015-2045 Peak-Period Travel Models, 7-8 AM or 5-6 PM, whichever was greater, all weekdays)</i>
                                         <ul>
-                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (1) = 2015 V/C ratio of 0.5 or greater, and 30% or greater change in the peak period V/C ratio from 2015 to 2045</li>
-                                          <li><i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 0% or greater change in the peak period V/C ratio from 2015 to 2045</li>
+                                          <i class="glyphicon glyphicon-minus legend-red"></i> High (1) = 2015 V/C ratio of 0.5 or greater, and 30% or greater change in the peak period V/C ratio from 2015 to 2045<br>
+                                          <i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 0% or greater change in the peak period V/C ratio from 2015 to 2045
                                         </ul>
                                     All of the measures to Reduce Congestion can combine to total a maximum of 2 points per link.<br><br>
                                     <i><b>Source:</b> DVRPC. </i>
@@ -800,13 +800,13 @@ cursor: ew-resize;
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="Planning">
-                                    <h4 class="modal-title" style="color:black">Planning Time Index (PTI)</h4>
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Planning Time Index (PTI)</h4>
                                     <p>PTI measures roadway reliability by comparing the 95th percentile travel time for a segment of road during the peak hour (7-8 AM and 5-6 PM) to the free-flow travel time for the same segment.  A PTI of 3.00 means that for a trip that takes 20 minutes under free-flow conditions, a traveler should budget a total of 60 minutes to ensure on-time arrival 95% of the time, which is equivalent to one work day a month 19/20, where one might expect to plan to leave 40 minutes earlier to arrive on time. It is normal and appropriate for PTI to increase somewhat during peak hours.
                                     </p>
                                     <p><b>Scoring</b><i>  (Peak Hour PTI, 7-8 AM or 5-6 PM, whichever is greater, all weekdays in 2017)</i>
                                         <ul>
-                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Greater than 3 (highly unreliable)</li>
-                                          <li><i class="glyphicon glyphicon-minus legend-orange"></i> Medium-High (0.5) = 2 - 3 (moderately unreliable)</li>
+                                          <i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Greater than 3 (highly unreliable)<br>
+                                          <i class="glyphicon glyphicon-minus legend-orange"></i> Medium-High (0.5) = 2 - 3 (moderately unreliable)
                                         </ul>
                                     All of the measures to Increase Accessibility, Mobility and Reliability can combine to total a maximum of 3.0 points per link.<br><br>
                                     <i><b>Source:</b> INRIX, DVRPC.</i>
@@ -852,18 +852,19 @@ cursor: ew-resize;
                                     <p>Rebuilding and maintaining the region’s core network of transportation infrastructure is a key goal of the Long-Range Plan. This measure identifies all road links on the Enhanced National Highway System (NHS) including principal arterials and NHS connectors. It identifies roadways within one-mile of existing passenger rail (including Amtrak) and existing freight rail lines.  It identifies roadways within major freight centers including; major rail yards, rail-truck intermodal yards, and ports; and within one-mile of the Philadelphia International Airport.
                                     </p>
                                     <p><b>Scoring</b><i>  (Core Transportation Network)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-red"></i> Each of the above items received 0.5 points. The measures to Rebuild and Maintain Transportation Infrastructure can combine to total a maximum of 1 point per link.<br><br>
+                                    <i class="glyphicon glyphicon-minus legend-red"></i> Each of the above items received 0.5 points. <br>
+                                    The measures to Rebuild and Maintain Transportation Infrastructure can combine to total a maximum of 1 point per link.<br><br>
                                     <i><b>Source:</b> DVRPC.</i>
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="Existing">
-                                    <h4 class="modal-title" style="color:black">Existing Transit</h4>
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Existing Transit</h4>
                                     <p>Roads with bus or trolley service, which are essential infrastructure for transit riders, were identified. “Substantial service” was defined as bus or trolley routes making three or more runs during the 7-8 AM or 5-6 PM peak hour in urban locations, or two or more runs in suburban locations. 
                                     </p>
                                     <p><b>Scoring</b><i>  (Existing Transit)</i>
                                         <ul>
-                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Road links with substantial transit service</li>
-                                          <li><i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = Road links with any transit service</li>
+                                          <i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Road links with substantial transit service<br>
+                                          <i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = Road links with any transit service
                                         </ul>
                                     The measures to Rebuild and Maintain Transportation Infrastructure can combine to total a maximum of 1 point per link.<br><br>
                                     <i><b>Source:</b> DVRPC, Amtrak, NJ Transit, PATCO, SEPTA.</i>
@@ -906,19 +907,21 @@ cursor: ew-resize;
                             <div id="EXTODTabsContent" class="tab-content">
                                 <div class="tab-pane fade active in" id="Crash1">
                                     <h4 class="modal-title" style="color:black;font-weight:bold">Crash Severity </h4>
-                                    <p>This measure identified road segments with four or more kills or major injuries per mile of roadway.  Crashes were analyzed over 5-years (2013-2017).
+                                    <p>This measure identified road segments with five or more kills or major injuries per mile of roadway.  Crashes were analyzed over 5-years (2013-2017).
                                     </p>
                                     <p><b>Scoring</b><i>  (High Crash Severity)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-red"></i> The measures to Create a Safer Transportation System can combine to total a maximum of 1.0 point per link.<br><br>
+                                    <i class="glyphicon glyphicon-minus legend-red"></i> Road segments with five or more kills or major injuries per mile of roadway received 0.5 points.<br><br>
+                                    The measures to Create a Safer Transportation System can combine to total a maximum of 1.0 point per link.<br><br>
                                     <i><b>Source:</b> NJDOT, PennDOT, DVRPC.</i>
                                     </p>
                                 </div>
                                   <div class="tab-pane fade" id="Crash2">
                                     <h4 class="modal-title" style="color:black;font-weight:bold">Crash Frequency </h4>
-                                    <p>This measure identifies road segments where the actual crash rate is five or more times the average rate for a type of roadway.  Crash rates are calculated as crashes per one-hundred million vehicles-miles traveled, and are analyzed over 5-years (2013-2017).  Roadway types include urban or rural, divided or undivided, limited access or no access control, and ones with roadway width and annual average daily traffic thresholds.  Average crash rates are assigned to each combination of roadway types. 
+                                    <p>This measure identifies road segments where the actual crash rate is four or more times the average rate for a type of roadway.  Crash rates are calculated as crashes per one-hundred million vehicles-miles traveled, and are analyzed over 5-years (2013-2017).  Roadway types include urban or rural, divided or undivided, limited access or no access control, and ones with roadway width and annual average daily traffic thresholds.  Average crash rates are assigned to each combination of roadway types. 
                                     </p>
                                     <p><b>Scoring</b><i>  (High Crash Frequency)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-red"></i> This measure identifies road segments where the actual crash rate is four or more times the average rate for a type of roadway. Roadway types include urban or rural, divided or undivided, limited access or no access control, and ones with roadway width and AADT thresholds.  Crash rates are calculated as crashes per one-hundred million vehicles-miles traveled, and average crash rates are assigned for each combination of roadway types. Crashes are analyzed over 5-years (2013-2017).
+                                    <i class="glyphicon glyphicon-minus legend-red"></i>Roadway segments where the actual crash rates were four or more times the average rate for a type of roadway received 0.5 points.<br><br>
+                                    This measure identifies road segments where the actual crash rate is four or more times the average rate for a type of roadway. Roadway types include urban or rural, divided or undivided, limited access or no access control, and ones with roadway width and AADT thresholds.  Crash rates are calculated as crashes per one-hundred million vehicles-miles traveled, and average crash rates are assigned for each combination of roadway types. Crashes are analyzed over 5-years (2013-2017).
                                     <i><b>Source:</b> NJDOT, PennDOT, DVRPC.</i>
                                     </p>
                                 </div>
@@ -959,8 +962,8 @@ cursor: ew-resize;
                                     </p>
                                     <p><b>Scoring</b><i>(Peak Hour, 7-8 AM or 5-6 PM, whichever is greater, all weekdays in 2017)</i><br>
                                      <ul>
-                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Greater than 3.00 (highly congested)</li>
-                                          <li><i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 2.00 - 3.00 (moderately congested)</li>
+                                          <i class="glyphicon glyphicon-minus legend-red"></i> High (1) = Greater than 3.00 (highly congested)<br>
+                                          <i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 2.00 - 3.00 (moderately congested)
                                         </ul>
                                     The measure to Facilitate Goods Movement can combine to total a maximum of 1.0 point per link.<br><br>
                                     <i><b>Sources:</b> NPMRDS, Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software</i>
@@ -1012,7 +1015,7 @@ cursor: ew-resize;
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="Concern">
-                                    <h4 class="modal-title" style="color:black">Areas of Special Evacuation Concern</h4>
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Areas of Special Evacuation Concern</h4>
                                     <p>This measure identifies places where there are potential population evacuation issues. It started with Traffic Analysis Zones (TAZs) where the population or employment densities are two or more times the regional average. Locations where there are extremely large gatherings are also evacuation concerns. The measure was developed with input from regional security agencies.  
                                     </p>
                                     <p><b>Scoring</b><i>  (Special Evacuation Concern)</i><br>
@@ -1063,26 +1066,26 @@ cursor: ew-resize;
                                     <p>The Green Infrastructure Screening Tool (GIST) was developed to analyze the environmental impact of transportation projects for the Long-Range Plan.  It incorporates a wide range of environmental factors. This measure was used to identify road segments in areas where investment will likely have fewer environmental impacts.          
                                     </p>
                                     <p><b>Scoring</b><i>  (Low GIST score))</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-blue"></i> Road links within the lowest impact range (0-2) of GIST scores received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link.<br><br>
+                                    <i class="glyphicon glyphicon-minus legend-red"></i> Road links within the lowest impact range (0-2) of GIST scores received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link.<br><br>
                                     <i><b>Source:</b> DVRPC. </i>
 
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="Infill">
-                                    <h4 class="modal-title" style="color:black">Connections 2045 Infill and Redevelopment areas, Emerging Growth areas</h4>
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Connections 2045 Infill and Redevelopment areas, Emerging Growth areas</h4>
                                     <p>This measure identifies road links within Infill and Redevelopment areas, and Emerging Growth areas from the Connections 2045 Long-Range Plan. After Land Use Centers, Infill and Redevelopment areas, followed by Emerging Growth area, are the priorities for investment.
                                     </p>
                                     <p><b>Scoring</b><i>  (Infill and Redevelopment areas, Emerging Growth areas)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-blue"></i> Road links within Infill and Redevelopment areas, and Emerging Growth areas received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link. <br><br>
+                                    <i class="glyphicon glyphicon-minus legend-red"></i> Road links within Infill and Redevelopment areas, and Emerging Growth areas received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link. <br><br>
                                     <i><b>Source:</b> DVRPC. </i>
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="Centers">
-                                    <h4 class="modal-title" style="color:black">Connections 2045 Land Use Centers</h4>
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Connections 2045 Land Use Centers</h4>
                                     <p>This measure identifies road links within Land Use Centers from the Connections 2045 Long-Range Plan. Centers are the highest priority areas for investment in the regional transportation network.   
                                     </p>    
                                    <p><b>Scoring</b><i>  (Land Use Centers)</i><br>
-                                    <i class="glyphicon glyphicon-minus legend-blue"></i> Road links within Land Use Centers received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link.<br><br>
+                                    <i class="glyphicon glyphicon-minus legend-red"></i> Road links within Land Use Centers received half a point. All of the measures to Ensure Transportation Investments Support LRP Principles can combine to total a maximum of 1 point per link.<br><br>
                                     <i><b>Source:</b> DVRPC. </i>
                                     </p>
                                 </div>
@@ -1103,7 +1106,7 @@ cursor: ew-resize;
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title modal-legend">Integrate National Performance Management Measures (PM3)</h4>
-                    <p>New PM3 measures adopted by FHWA in May 2017 as part of the FAST Act help better align proposed project improvements through performance based planning and programming.  Baseline and required targets are established at the statewide and urbanized area (UZA) level with the intention of programming projects to meet the regional targets.  While the baseline and target values are established at the statewide and UZA level, they are calculated at the roadway segment level from the National Performance Management  Research Dataset (NPMRDS), which includes only roadways on the National Highway System (NHS). This roadway data is utilized in the CMP to identify congested locations, and to help prioritize congested corridor and subcorridor areas, and the most congested focus roadway facilities, and bottlenecks.</p>
+                    <p>New PM3 measures adopted by FHWA in May 2017 as part of the FAST Act help better align proposed project improvements through performance based planning and programming.  Baseline and required targets are established at the statewide and urbanized area (UZA) level with the intention of programming projects to meet the regional targets.  While the baseline and target values are established at the statewide and UZA level, they are calculated at the roadway segment level from the National Performance Management  Research Dataset (NPMRDS), which includes only roadways on the National Highway System (NHS). This roadway data is utilized in the CMP to identify congested locations, and to help prioritize congested corridor and subcorridor areas, and the most congested focus roadway facilities, and intersection bottlenecks.</p>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -1128,8 +1131,8 @@ cursor: ew-resize;
                                     </p>
                                     <p><b>Scoring</b><i>  (LOTTR)</i><br>
                                          <ul>
-                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (1.0) = Greater than 2.00 (highly congested)</li>
-                                          <li><i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 1.50 - 2.00 (moderately congested)</li>
+                                          <i class="glyphicon glyphicon-minus legend-red"></i> High (1.0) = Greater than 2.00 (highly congested)<br>
+                                          <i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 1.50 - 2.00 (moderately congested)
                                         </ul>
                                     <p>All PM3 traffic reliability and congestion measures can combine to total a maximum of 2.0 points per link.</p>
                                     <i><b>Sources:</b> FHWA (see 23 CFR 490.507(a)(1,2)), Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software
@@ -1138,24 +1141,24 @@ cursor: ew-resize;
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="TTTR">
-                                    <h4 class="modal-title" style="color:black">Truck Travel Time Reliability (TTTR)</h4>
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Truck Travel Time Reliability (TTTR)</h4>
                                     <p>This measure helps to assess freight reliability movements on the interstate system within the region.  The TTTR Index indicates the reliability of the roadway for freight movement measured by the ratio of the 95th percentile travel time to a “normal” travel time (50th percentile).  This measure is calculated for five peak hour time periods: weekdays 6-10 am, 10 am to 4 pm, and 4-8 pm; every day from 8 pm to 6 am; and weekends 6 am to 8 pm.  The time period with the highest TTRR is used as the criteria for determining reliability.  For purposes of the CMP, a TTTR value greater than the regional average is considered unreliable.
                                     </p>
                                     <p><b>Scoring</b><i>(TTTR)</i><br>
                                          <ul>
-                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (0.5) = 1x or more times the regional average</li>
+                                          <i class="glyphicon glyphicon-minus legend-red"></i> High (0.5) = 1x or more times the regional average
                                         </ul>
                                         <p>All PM3 traffic reliability and congestion measures can combine to total a maximum of 2.0 points per link.</p>
                                     <i><b>Source:</b> FHWA (see 23 CFR 490.607), Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software</i>
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="PHED">
-                                    <h4 class="modal-title" style="color:black">Peak Hour Excessive Delay (PHED)</h4>
+                                    <h4 class="modal-title" style="color:black;font-weight:bold">Peak Hour Excessive Delay (PHED)</h4>
                                     <p>Travel times, hourly traffic volumes, posted speed limits, mode shares (passenger vehicles, transit and trucks), and average vehicle occupant factors are used to calculate excessive delay at the roadway segment level for peak periods 6-10 am and 3-7 pm, and then aggregated to the UZA. PHED values two or more times the regional average are considered high PHED.
                                     </p>    
                                    <p><b>Scoring</b><i> (PHED)</i><br>
                                         <ul>
-                                          <li><i class="glyphicon glyphicon-minus legend-red"></i> High (0.5) = 2x or more times the regional average</li>
+                                          <i class="glyphicon glyphicon-minus legend-red"></i> High (0.5) = 2x or more times the regional average
                                         </ul>
                                         <p>All PM3 traffic reliability and congestion measures can combine to total a maximum of 2.0 points per link.</p>
                                     <i><b>Source:</b>FHWA (see 23 CFR 490.707(a)), Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software</i>

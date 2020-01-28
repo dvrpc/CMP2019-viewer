@@ -316,23 +316,23 @@ inputs[i].onclick = switchLayer;
                       'paint': {
                       'fill-color': [
                           "case",
-                          ["==", ["get", "CMP_ID"], 1],"#92D3C8",
-                          ["==", ["get", "CMP_ID"], 2],"#F37D80",
-                          ["==", ["get", "CMP_ID"], 3],"#FBF7C0",
-                          ["==", ["get", "CMP_ID"], 4],"#F9BDBF",
-                          ["==", ["get", "CMP_ID"], 5],"#FFD380",
-                          ["==", ["get", "CMP_ID"], 6],"#C7E6DC",
-                          ["==", ["get", "CMP_ID"], 7],"#D7C19E",
-                          ["==", ["get", "CMP_ID"], 8],"#82D4F2",
-                          ["==", ["get", "CMP_ID"], 9],"#DABEDB",
-                          ["==", ["get", "CMP_ID"], 10],"#B57DB6",
-                          ["==", ["get", "CMP_ID"], 11],"#FAF078",
-                          ["==", ["get", "CMP_ID"], 12],"#DB7DB3",
-                          ["==", ["get", "CMP_ID"], 13],"#D7D79E",
-                          ["==", ["get", "CMP_ID"], 14],"#80AEDD",
-                          ["==", ["get", "CMP_ID"], 15],"#9DCB3B",
-                          ["==", ["get", "CMP_ID"], 16],"#FFEBBE",
-                          ["==", ["get", "CMP_ID"], 17],"#39BF7C",
+                          ["==", ["get", "CMP_ID"], 1],"#82D4F2",
+                          ["==", ["get", "CMP_ID"], 2],"#37C2F1",
+                          ["==", ["get", "CMP_ID"], 3],"#B57DB6",
+                          ["==", ["get", "CMP_ID"], 4],"#92D3C8",
+                          ["==", ["get", "CMP_ID"], 5],"#D7C19E",
+                          ["==", ["get", "CMP_ID"], 6],"#F9BDBF",
+                          ["==", ["get", "CMP_ID"], 7],"#8BC867",
+                          ["==", ["get", "CMP_ID"], 8],"#FEEAAE",
+                          ["==", ["get", "CMP_ID"], 9],"#D7B09E",
+                          ["==", ["get", "CMP_ID"], 10],"#FFD380",
+                          ["==", ["get", "CMP_ID"], 11],"#92D3C8",
+                          ["==", ["get", "CMP_ID"], 12],"#F4C0D9",
+                          ["==", ["get", "CMP_ID"], 13],"#DABEDB",
+                          ["==", ["get", "CMP_ID"], 14],"#F5CA7A",
+                          ["==", ["get", "CMP_ID"], 15],"#D3FFBE",
+                          ["==", ["get", "CMP_ID"], 16],"#00E6A9",
+                          ["==", ["get", "CMP_ID"], 17],"#FFFF00",
                           "#cccccc"
                         ],
                         'fill-outline-color' :['case',['boolean', ['feature-state', 'hover'], false],"#000000","#7c7c7c" ],
@@ -1280,13 +1280,12 @@ map.addLayer({
                           '<tbody>' +
                           '<tr class="odd">' +
                          '<th>Travel Time Index (TTI)</th><td>' + tti + ' ('+ tti_info +')</td>' +
-                     //     '<th>Travel Time Index (TTI)</th><td>' + tti + '</td>' +
                           '<tr class="even">' +
                           '<th>Anticipated Growth in V/C</th><td>' + vc + '</td>' +
                           '<tr class="odd">' +
                          '<th>Transit Score and Rail Stations</th><td>' + transcore + ' & '+ rail+ '</td>' +
                           '<tr class="even">' +
-                          '<th>Planning Time Index (PTI)</th><td>' + pti+ '</td>' +
+                          '<th>Planning Time Index (PTI)</th><td>' + pti+ ' ('+ pti_info +')</td>' +
                           '<tr class="odd">' +
                           '<th>Core Transportation Network</th><td>' + nhs + '</td>' +
                           '<tr class="even">' +
