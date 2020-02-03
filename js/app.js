@@ -556,7 +556,7 @@ inputs[i].onclick = switchLayer;
                     ["==", ["get", "FreightPo"], .5],
                     ["==", ["get", "RailLinePo"], .5]
                     ],
-                    "#f5b041",
+                    "#cb4335",
                     [
                      "any",
                     ["==", ["get", "NHSPoint"], .5],
@@ -570,7 +570,7 @@ inputs[i].onclick = switchLayer;
                   [
                   "case",
                     ["any",["==", ["get", "NHSPoint"], .0],["==", ["get", "FreightPo"], .5],["==", ["get", "RailLinePo"], .5]],
-                    6,
+                    2,
                     ["any",["==", ["get", "NHSPoint"], .5],["==", ["get", "FreightPo"], 1],["==", ["get", "RailLinePo"], 1]],
                     2,
                     0
@@ -581,7 +581,7 @@ inputs[i].onclick = switchLayer;
                   ["any",["==", ["get", "NHSPoint"], .0],["==", ["get", "FreightPo"], .5]],
                     .4,
                   ["any",["==", ["get", "NHSPoint"], .5],["==", ["get", "FreightPo"], 1],["==", ["get", "RailLinePo"], 1]],
-                    .8,
+                    .4,
                     0
                   ],
           }
@@ -1271,7 +1271,7 @@ map.addLayer({
               else if (features[i].properties.Bearing === 'W' ){ var dirT = " (West Bound) " ;}
               else var dirT = "";
 
-              var newSet = '<div id="pm_info"><h3 style="background-color:#E0E0E0"><i class="glyphicon glyphicon-stats"></i>&nbsp; Objective Measures</h3>The scores below are for the selected roadway segments<br>' +
+              var newSet = '<div id="pm_info"><h3 style="background-color:#E0E0E0"><i class="glyphicon glyphicon-stats"></i>&nbsp; CMP Objective Measures</h3>The scores below are for the selected roadway segments<br>' +
                           '<B>Road Name:</B> ' + roadname  
                            + dirT + 
                       //     dirT
