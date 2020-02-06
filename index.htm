@@ -187,7 +187,7 @@
         }
         .panel-group .panel {
             margin-top: -11px;
-            overflow: hidden;
+            overflow: auto;
             border-radius: 0px;
         }
         .shield {
@@ -545,38 +545,25 @@ cursor: ew-resize;
                     </div>
                   </div>
         </div>
-		<div class="tab-pane" id="Results">
-                    <div class="panel-group">
-						<div class="panel panel-default">
+                    <div class="tab-pane" id="Results">
+                        <div class="panel-group">
+                    		<div class="panel panel-default">
 
-							<div id="overlay-layers" class="panel-collapse collapse in" >		
-								<div class="panel-body" style="padding: 20px 0px 0px 0px;">		
-                                    <span id="click_help" class="text-muted">&nbsp;(Click subcorridor or roadway for information)</span> 
-                                    <span id="cmp_info" style="display:none"><h3 style="text-align:center;background-color:#E0E0E0;margin: 0px 25px 0px 25px;"><i class="glyphicon glyphicon-road"></i>&nbsp;CMP Subcorridor Information</h3></span>     
-								    <div id="infosidebar"style="padding:10px"></div>
-                                    <div id="selectedFeatures" style="width: auto;margin: 10px 10px 10px 15px;">&nbsp;</div>			
-								</div>
-						     </div>
-						</div>
+                    			<div id="overlay-layers" class="panel-collapse collapse in" >		
+                    				<div class="panel-body" style="padding: 20px 0px 0px 0px;">		
+                                        <span id="click_help" class="text-muted">&nbsp;(Click subcorridor or roadway for information)</span> 
+                                        <span id="cmp_info" style="display:none"><h3 style="text-align:center;background-color:#E0E0E0;margin: 0px 25px 0px 25px;"><i class="glyphicon glyphicon-road"></i>&nbsp;CMP Subcorridor Information</h3></span>     
+                    				    <div id="infosidebar"style="padding:10px"></div>
+                                        <div id="selectedFeatures" style="width: auto;margin: 10px 10px 10px 15px;">&nbsp;</div>			
+                    				</div>
+                    		     </div>
+                    		</div>
+                        </div>
                     </div>
-                </div>
             </div>			
 		</div>
 		
-        <div class="col-sm-7 col-lg-7" id="map">
-
-      <!--  <div id="menu">
-            <input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked" />
-            <label for="streets">streets</label>
-            <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
-            <label for="dark">dark</label>
-            <input id="crvanpollard/ck5fpyqti0v971itf7edp2eyd" type="radio" name="rtoggle" value="satellite" />
-            <label for="satellite">satellite</label>
-        </div>
-        -->
-        </div>
-
-
+        <div class="col-sm-7 col-lg-7" id="map"></div>
 
         <a href='javascript:void(0);' id='zoomtoregion'></a>
 
@@ -936,7 +923,7 @@ cursor: ew-resize;
     </div>
     <!-- /.modal --> 
 <!-- end Category Modal -->
-!-- start Category Modal -->
+<!-- start Category Modal -->
     <div class="modal fade" id="Freight">
         <div class="modal-dialog modal-lg" style="width: 875px;">
             <div class="modal-content" style="overflow:hidden">
@@ -1135,9 +1122,7 @@ cursor: ew-resize;
                                           <i class="glyphicon glyphicon-minus legend-orange"></i> Medium (0.5) = 1.50 - 2.00 (moderately congested)
                                         </ul>
                                     <p>All PM3 traffic reliability and congestion measures can combine to total a maximum of 2.0 points per link.</p>
-                                    <i><b>Sources:</b> FHWA (see 23 CFR 490.507(a)(1,2)), Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software
-. </i>
-
+                                    <i><b>Sources:</b> FHWA (see 23 CFR 490.507(a)(1,2)), Center for Advanced Transportation Technology Laboratory (CATT Lab) Probe Data Analytics (PDA) Software. </i>
                                     </p>
                                 </div>
                                 <div class="tab-pane fade" id="TTTR">
