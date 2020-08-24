@@ -1396,7 +1396,7 @@ map.addLayer({
 
 
             var newSet = '<h4 style="color:white;background-color:' + banner + '"><div class="label"><img class="shield" src="' + shield + ' ">' + name + '</div></h4>' + "<div class='labelfield'><b>Subcorridor ID/Name: </b>" + cmp + subid + " - " + subname + "<br>" + "<div class='labelfield'><b>Priority Subcorridor: </b>" + priority + "</div>" +
-              '<img style="margin:0px 0px 5px 0px" src="https://www.dvrpc.org/asp/TIPsearch/2015/PA/img/document.png"/>&nbsp; - <a class="one" href="https://www.dvrpc.org/asp/CMP2019/'+ state+'CMP2019Detail.aspx?corridor='+cmp+'&subcorridor='+ subid + '" target="_blank"> ' + "View Subcorridor Information" + "</a><br>" 
+              '<img style="margin:0px 0px 5px 0px" src="img/document.png"/>&nbsp; - <a class="one" href="https://www.dvrpc.org/asp/CMP2019/'+ state+'CMP2019Detail.aspx?corridor='+cmp+'&subcorridor='+ subid + '" target="_blank"> ' + "View Subcorridor Information" + "</a><br>" 
                           ;
 
                 contentCMP += newSet
