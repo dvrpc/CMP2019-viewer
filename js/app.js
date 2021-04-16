@@ -53,7 +53,7 @@ var TTI, PTI, TSCORE, LRP_VC, CTN, TRANSIT,CRASH1,CRASH2, TTTI,Env,InfEmerg, Pla
 var info = document.getElementById('selectedFeatures');
 var layer;
 function toggleLayer(e){
-  //  console.log(e);
+ //   console.log(e);
     var layer = e.value;
     map.setLayoutProperty('TTI', 'visibility', 'none');
     map.setLayoutProperty('LRP_VC', 'visibility', 'none');
