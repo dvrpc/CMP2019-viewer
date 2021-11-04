@@ -237,7 +237,8 @@ inputs[i].onclick = switchLayer;
 
         $.ajax(CMP_PA)
           .done(function(data) {
-            data = JSON.parse(data)
+         //   data = JSON.parse(data)
+           data = JSON.parse(JSON.stringify(data));
          //   console.log(data.features)
 
             data.features.forEach(function(feature) {
@@ -296,7 +297,8 @@ inputs[i].onclick = switchLayer;
       
         $.ajax(CMP_NJ)
           .done(function(data) {
-            data = JSON.parse(data)
+            // data = JSON.parse(data)
+            data = JSON.parse(JSON.stringify(data));
           //  console.log(data.features)
 
             data.features.forEach(function(feature) {
