@@ -32,8 +32,8 @@ function legendraw8(element) {
      //   $("#SurveyModal").modal("show");
         window.open("https://dvrpcgis.maps.arcgis.com/apps/MapSeries/index.html?appid=732efbf95f76489598277df671b5d6b2");
       }
-     var CMP_PA = 'https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_SubcorridorsEmergingCorridors/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=pgeojson';
-    var CMP_NJ = 'https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_SubcorridorsEmergingCorridors/FeatureServer/1/query?where=1%3D1&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=pgeojson';
+     var CMP_PA = 'https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_SubcorridorsEmergingCorridors/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
+    var CMP_NJ = 'https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_SubcorridorsEmergingCorridors/FeatureServer/1/query?where=1%3D1&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
     var allIDs = [];
     var filterGroup = document.getElementById('filter-group');
     var layerID;
@@ -358,7 +358,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=TTI+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=pgeojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTI+%3E+0&outFields=tti&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -369,27 +369,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "TTI"], .5],
+                    ["==", ["get", "tti"], .5],
                     "#f5b041",
-                    ["==", ["get", "TTI"], 1],
+                    ["==", ["get", "tti"], 1],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "TTI"], .5],
+                    ["==", ["get", "tti"], .5],
                     6,
-                    ["==", ["get", "TTI"], 1],
+                    ["==", ["get", "tti"], 1],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "TTI"], .5],
+                    ["==", ["get", "tti"], .5],
                     .4,
-                    ["==", ["get", "TTI"], 1],
+                    ["==", ["get", "tti"], 1],
                     .8,
                     0
                   ],
@@ -402,7 +402,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=LRP_VC+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=pgeojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=LRP_VC+%3E+0&outFields=lrp_vc&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -413,27 +413,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "LRP_VC"], .5],
+                    ["==", ["get", "lrp_vc"], .5],
                     "#f5b041",
-                    ["==", ["get", "LRP_VC"], 1],
+                    ["==", ["get", "lrp_vc"], 1],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "LRP_VC"], .5],
+                    ["==", ["get", "lrp_vc"], .5],
                     6,
-                    ["==", ["get", "LRP_VC"], 1],
+                    ["==", ["get", "lrp_vc"], 1],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "LRP_VC"], .5],
+                    ["==", ["get", "lrp_vc"], .5],
                     .4,
-                    ["==", ["get", "LRP_VC"], 1],
+                    ["==", ["get", "lrp_vc"], 1],
                     .8,
                     0
                   ],
@@ -445,7 +445,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=TransScore>+0+or+RailPoint+>+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=pgeojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TransScore>+0+or+RailPoint+>+0&outFields=TransScore,RailPoint&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -458,15 +458,15 @@ inputs[i].onclick = switchLayer;
                   "case",
                     [
                     "any",
-                    ["==", ["get", "TransScore"], .5],
-                    ["==", ["get", "RailPoint"], .5]
+                    ["==", ["get", "transcore"], .5],
+                    ["==", ["get", "railpoint"], .5]
                  //   "==", ["get", "RailPoint"], .5
                     ],
                     "#f5b041",
                     [
                      "any",
-                    ["==", ["get", "TransScore"], 1],
-                    ["==", ["get", "RailPoint"], 1]
+                    ["==", ["get", "transcore"], 1],
+                    ["==", ["get", "railpoint"], 1]
                     ],
                     "#cb4335",
                     "#cccccc"
@@ -474,18 +474,18 @@ inputs[i].onclick = switchLayer;
               "line-width":
                   [
                   "case",
-                    ["any",["==", ["get", "TransScore"], .5],["==", ["get", "RailPoint"], .5]],
+                    ["any",["==", ["get", "transcore"], .5],["==", ["get", "railpoint"], .5]],
                     6,
-                    ["any",["==", ["get", "TransScore"], 1],["==", ["get", "RailPoint"], 1]],
+                    ["any",["==", ["get", "transcore"], 1],["==", ["get", "railpoint"], 1]],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                  ["any",["==", ["get", "TransScore"], .5],["==", ["get", "RailPoint"], .5]],
+                  ["any",["==", ["get", "transcore"], .5],["==", ["get", "railpoint"], .5]],
                     .4,
-                  ["any",["==", ["get", "TransScore"], 1],["==", ["get", "RailPoint"], 1]],
+                  ["any",["==", ["get", "transcore"], 1],["==", ["get", "railpoint"], 1]],
                     .8,
                     0
                   ],
@@ -497,7 +497,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=PTI+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=pgeojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PTI+%3E+0&outFields=pti&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -508,27 +508,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "PTI"], .5],
+                    ["==", ["get", "pti"], .5],
                     "#f5b041",
-                    ["==", ["get", "PTI"], 1],
+                    ["==", ["get", "pti"], 1],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "PTI"], .5],
+                    ["==", ["get", "pti"], .5],
                     6,
-                    ["==", ["get", "PTI"], 1],
+                    ["==", ["get", "pti"], 1],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "PTI"], .5],
+                    ["==", ["get", "pti"], .5],
                     .4,
-                    ["==", ["get", "PTI"], 1],
+                    ["==", ["get", "pti"], 1],
                     .8,
                     0
                   ],
@@ -541,7 +541,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=NHSPoint%3E+0+or+TransitPoi+%3E+0+or+RailLinePo+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=NHSPoint%3E+0+or+TransitPoi+%3E+0+or+RailLinePo+%3E+0&outFields=NHSPoint,TransitPoi,RailLinePo&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -554,15 +554,15 @@ inputs[i].onclick = switchLayer;
                   "case",
                     [
                     "any",
-                    ["==", ["get", "NHSPoint"], 0],
-                    ["==", ["get", "FreightPo"], .5],
+                    ["==", ["get", "nhspoint"], 0],
+                    ["==", ["get", "freightpo"], .5],
                     ["==", ["get", "RailLinePo"], .5]
                     ],
                     "#cb4335",
                     [
                      "any",
-                    ["==", ["get", "NHSPoint"], .5],
-                    ["==", ["get", "FreightPo"], 1],
+                    ["==", ["get", "nhspoint"], .5],
+                    ["==", ["get", "freightpo"], 1],
                     ["==", ["get", "RailLinePo"], 1]
                     ],
                     "#cb4335",
@@ -571,18 +571,18 @@ inputs[i].onclick = switchLayer;
               "line-width":
                   [
                   "case",
-                    ["any",["==", ["get", "NHSPoint"], .0],["==", ["get", "FreightPo"], .5],["==", ["get", "RailLinePo"], .5]],
+                    ["any",["==", ["get", "nhspoint"], .0],["==", ["get", "freightpo"], .5],["==", ["get", "RailLinePo"], .5]],
                     2,
-                    ["any",["==", ["get", "NHSPoint"], .5],["==", ["get", "FreightPo"], 1],["==", ["get", "RailLinePo"], 1]],
+                    ["any",["==", ["get", "nhspoint"], .5],["==", ["get", "freightpo"], 1],["==", ["get", "RailLinePo"], 1]],
                     2,
                     0
                   ],
               "line-opacity":
                   [
                   "case",
-                  ["any",["==", ["get", "NHSPoint"], .0],["==", ["get", "FreightPo"], .5]],
+                  ["any",["==", ["get", "nhspoint"], .0],["==", ["get", "freightpo"], .5]],
                     .4,
-                  ["any",["==", ["get", "NHSPoint"], .5],["==", ["get", "FreightPo"], 1],["==", ["get", "RailLinePo"], 1]],
+                  ["any",["==", ["get", "nhspoint"], .5],["==", ["get", "freightpo"], 1],["==", ["get", "RailLinePo"], 1]],
                     .4,
                     0
                   ],
@@ -594,7 +594,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=TransitPoi+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TransitPoi+%3E+0&outFields=transitpoi&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -605,27 +605,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "TransitPoi"], .5],
+                    ["==", ["get", "transitpoi"], .5],
                     "#f5b041",
-                    ["==", ["get", "TransitPoi"], 1],
+                    ["==", ["get", "transitpoi"], 1],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "TransitPoi"], .5],
+                    ["==", ["get", "transitpoi"], .5],
                     6,
-                    ["==", ["get", "TransitPoi"], 1],
+                    ["==", ["get", "transitpoi"], 1],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "TransitPoi"], .5],
+                    ["==", ["get", "transitpoi"], .5],
                     .4,
-                    ["==", ["get", "TransitPoi"], 1],
+                    ["==", ["get", "transitpoi"], 1],
                     .8,
                     0
                   ],
@@ -637,7 +637,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=HighCrSev+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HighCrSev+%3E+0&outFields=HighCrSev&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -648,27 +648,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "HighCrSev"], 0],
+                    ["==", ["get", "highcrsev"], 0],
                     "#f5b041",
-                    ["==", ["get", "HighCrSev"], .5],
+                    ["==", ["get", "highcrsev"], .5],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "HighCrSev"], 0],
+                    ["==", ["get", "highcrsev"], 0],
                     6,
-                    ["==", ["get", "HighCrSev"], .5],
+                    ["==", ["get", "highcrsev"], .5],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "HighCrSev"], 0],
+                    ["==", ["get", "highcrsev"], 0],
                     .4,
-                    ["==", ["get", "HighCrSev"], .5],
+                    ["==", ["get", "highcrsev"], .5],
                     .8,
                     0
                   ],
@@ -680,7 +680,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=HighCrFreq+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HighCrFreq+%3E+0&outFields=HighCrFreq&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -691,27 +691,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "HighCrFreq"], 0],
+                    ["==", ["get", "highcrfreq"], 0],
                     "#f5b041",
-                    ["==", ["get", "HighCrFreq"], .5],
+                    ["==", ["get", "highcrfreq"], .5],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "HighCrFreq"], 0],
+                    ["==", ["get", "highcrfreq"], 0],
                     6,
-                    ["==", ["get", "HighCrFreq"], .5],
+                    ["==", ["get", "highcrfreq"], .5],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "HighCrFreq"], 0],
+                    ["==", ["get", "highcrfreq"], 0],
                     .4,
-                    ["==", ["get", "HighCrFreq"], .5],
+                    ["==", ["get", "highcrfreq"], .5],
                     .8,
                     0
                   ],
@@ -723,7 +723,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=TTTI+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTTI+%3E+0&outFields=TTTI&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -734,27 +734,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "TTTI"], .5],
+                    ["==", ["get", "ttti"], .5],
                     "#f5b041",
-                    ["==", ["get", "TTTI"], 1],
+                    ["==", ["get", "ttti"], 1],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "TTTI"], .5],
+                    ["==", ["get", "ttti"], .5],
                     6,
-                    ["==", ["get", "TTTI"], 1],
+                    ["==", ["get", "ttti"], 1],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "TTTI"], .5],
+                    ["==", ["get", "ttti"], .5],
                     .4,
-                    ["==", ["get", "TTTI"], 1],
+                    ["==", ["get", "ttti"], 1],
                     .8,
                     0
                   ],
@@ -766,7 +766,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=HvyTran+%3E+0+OR+Limerick+%3E+0+OR+MajBridge+%3E+0+OR+Bridges+%3E+0+OR+Military+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HvyTran+%3E+0+OR+Limerick+%3E+0+OR+MajBridge+%3E+0+OR+Bridges+%3E+0+OR+Military+%3E+0&outFields=HvyTran,Limerick,MajBridge,Bridges,Military&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -779,20 +779,20 @@ inputs[i].onclick = switchLayer;
                   "case",
                     [
                     "any",
-                    ["==", ["get", "HvyTran"], 0],
-                    ["==", ["get", "Limerick"], 0],
-                    ["==", ["get", "Bridges"], 0],
-                    ["==", ["get", "Military"], 0],
-                    ["==", ["get", "MajBridge"], 0]
+                    ["==", ["get", "hvytran"], 0],
+                    ["==", ["get", "limerick"], 0],
+                    ["==", ["get", "bridges"], 0],
+                    ["==", ["get", "military"], 0],
+                    ["==", ["get", "majbridge"], 0]
                     ],
                     "#f5b041",
                     [
                      "any",
-                    ["==", ["get", "HvyTran"], .50],
-                    ["==", ["get", "Limerick"], .50],
-                    ["==", ["get", "Bridges"], .50],
-                    ["==", ["get", "Military"], .50],
-                    ["==", ["get", "MajBridge"], .50]
+                    ["==", ["get", "hvytran"], .50],
+                    ["==", ["get", "limerick"], .50],
+                    ["==", ["get", "bridges"], .50],
+                    ["==", ["get", "military"], .50],
+                    ["==", ["get", "majbridge"], .50]
                     ],
                     "#cb4335",
                     "#cccccc"
@@ -802,20 +802,20 @@ inputs[i].onclick = switchLayer;
                   "case",
                     [
                      "any",
-                    ["==", ["get", "HvyTran"], 0],
-                    ["==", ["get", "Limerick"], 0],
-                    ["==", ["get", "Bridges"], 0],
-                    ["==", ["get", "Military"], 0],
-                    ["==", ["get", "MajBridge"], 0]
+                    ["==", ["get", "hvytran"], 0],
+                    ["==", ["get", "limerick"], 0],
+                    ["==", ["get", "bridges"], 0],
+                    ["==", ["get", "military"], 0],
+                    ["==", ["get", "majbridge"], 0]
                     ],
                     6,
                     [
                      "any",
-                    ["==", ["get", "HvyTran"], .50],
-                    ["==", ["get", "Limerick"], .50],
-                    ["==", ["get", "Bridges"], .50],
-                    ["==", ["get", "Military"], .50],
-                    ["==", ["get", "MajBridge"], .50]
+                    ["==", ["get", "hvytran"], .50],
+                    ["==", ["get", "limerick"], .50],
+                    ["==", ["get", "bridges"], .50],
+                    ["==", ["get", "military"], .50],
+                    ["==", ["get", "majbridge"], .50]
                     ],
                     2,
                     0
@@ -825,20 +825,20 @@ inputs[i].onclick = switchLayer;
                   "case",
                 [
                      "any",
-                    ["==", ["get", "HvyTran"], 0],
-                    ["==", ["get", "Limerick"], 0],
-                    ["==", ["get", "Bridges"], 0],
-                    ["==", ["get", "Military"], 0],
-                    ["==", ["get", "MajBridge"], 0]
+                    ["==", ["get", "hvytran"], 0],
+                    ["==", ["get", "limerick"], 0],
+                    ["==", ["get", "bridges"], 0],
+                    ["==", ["get", "military"], 0],
+                    ["==", ["get", "majbridge"], 0]
                     ],
                     .4,
                   [
                      "any",
-                    ["==", ["get", "HvyTran"], .50],
-                    ["==", ["get", "Limerick"], .50],
-                    ["==", ["get", "Bridges"], .50],
-                    ["==", ["get", "Military"], .50],
-                    ["==", ["get", "MajBridge"], .50]
+                    ["==", ["get", "hvytran"], .50],
+                    ["==", ["get", "limerick"], .50],
+                    ["==", ["get", "bridges"], .50],
+                    ["==", ["get", "military"], .50],
+                    ["==", ["get", "majbridge"], .50]
                     ],
                     .8,
                     0
@@ -851,7 +851,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=HHDen+%3E+0+OR+EmpDen+%3E+0+OR+StadGathr+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HHDen+%3E+0+OR+EmpDen+%3E+0+OR+StadGathr+%3E+0&outFields=HHDen,EmpDen,StadGathr&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -864,16 +864,16 @@ inputs[i].onclick = switchLayer;
                   "case",
                     [
                     "any",
-                    ["==", ["get", "HHDen"], 1],
-                    ["==", ["get", "EmpDen"], 1],
-                    ["==", ["get", "StadGathr"], 1]
+                    ["==", ["get", "hhden"], 1],
+                    ["==", ["get", "empden"], 1],
+                    ["==", ["get", "stadgathr"], 1]
                     ],
                     "#f5b041",
                     [
                      "any",
-                    ["==", ["get", "HHDen"], .5],
-                    ["==", ["get", "EmpDen"], .5],
-                    ["==", ["get", "StadGathr"], .5]
+                    ["==", ["get", "hhden"], .5],
+                    ["==", ["get", "empden"], .5],
+                    ["==", ["get", "stadgathr"], .5]
                     ],
                     "#cb4335",
                     "#cccccc"
@@ -883,16 +883,16 @@ inputs[i].onclick = switchLayer;
                   "case",
                     [
                      "any",
-                    ["==", ["get", "HHDen"], 1],
-                    ["==", ["get", "EmpDen"], 1],
-                    ["==", ["get", "StadGathr"], 1]
+                    ["==", ["get", "hhden"], 1],
+                    ["==", ["get", "empden"], 1],
+                    ["==", ["get", "stadgathr"], 1]
                     ],
                     2,
                     [
                      "any",
-                    ["==", ["get", "HHDen"], .5],
-                    ["==", ["get", "EmpDen"], .5],
-                    ["==", ["get", "StadGathr"], .5]
+                    ["==", ["get", "hhden"], .5],
+                    ["==", ["get", "empden"], .5],
+                    ["==", ["get", "stadgathr"], .5]
                     ],
                     2,
                     0
@@ -902,16 +902,16 @@ inputs[i].onclick = switchLayer;
                   "case",
                 [
                      "any",
-                    ["==", ["get", "HHDen"], 1],
-                    ["==", ["get", "EmpDen"], 1],
-                    ["==", ["get", "StadGathr"], 1]
+                    ["==", ["get", "hhden"], 1],
+                    ["==", ["get", "empden"], 1],
+                    ["==", ["get", "stadgathr"], 1]
                     ],
                     .8,
                   [
                      "any",
-                    ["==", ["get", "HHDen"], .5],
-                    ["==", ["get", "EmpDen"], .5],
-                    ["==", ["get", "StadGathr"], .5]
+                    ["==", ["get", "hhden"], .5],
+                    ["==", ["get", "empden"], .5],
+                    ["==", ["get", "stadgathr"], .5]
                     ],
                     .8,
                     0
@@ -924,7 +924,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=ENV+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=ENV+%3E+0&outFields=ENV&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -935,27 +935,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "Env"], 0],
+                    ["==", ["get", "env"], 0],
                     "#f5b041",
-                    ["==", ["get", "Env"], .5],
+                    ["==", ["get", "env"], .5],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "Env"], 0],
+                    ["==", ["get", "env"], 0],
                     6,
-                    ["==", ["get", "Env"], .5],
+                    ["==", ["get", "env"], .5],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "Env"], 0],
+                    ["==", ["get", "env"], 0],
                     .4,
-                    ["==", ["get", "Env"], .5],
+                    ["==", ["get", "env"], .5],
                     .8,
                     0
                   ],
@@ -967,7 +967,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=InfEmerg+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=InfEmerg+%3E+0&outFields=InfEmerg&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -978,27 +978,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "InfEmerg"], 0],
+                    ["==", ["get", "infemerg"], 0],
                     "#f5b041",
-                    ["==", ["get", "InfEmerg"], .5],
+                    ["==", ["get", "infemerg"], .5],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "InfEmerg"], 0],
+                    ["==", ["get", "infemerg"], 0],
                     6,
-                    ["==", ["get", "InfEmerg"], .5],
+                    ["==", ["get", "infemerg"], .5],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "InfEmerg"], 0],
+                    ["==", ["get", "infemerg"], 0],
                     .4,
-                    ["==", ["get", "InfEmerg"], .5],
+                    ["==", ["get", "infemerg"], .5],
                     .8,
                     0
                   ],
@@ -1010,7 +1010,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=PlanCntr+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PlanCntr+%3E+0&outFields=PlanCntr&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1021,27 +1021,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "PlanCntr"], 0],
+                    ["==", ["get", "plancntr"], 0],
                     "#f5b041",
-                    ["==", ["get", "PlanCntr"], .5],
+                    ["==", ["get", "plancntr"], .5],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "PlanCntr"], 0],
+                    ["==", ["get", "plancntr"], 0],
                     6,
-                    ["==", ["get", "PlanCntr"], .5],
+                    ["==", ["get", "plancntr"], .5],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "PlanCntr"], 0],
+                    ["==", ["get", "plancntr"], 0],
                     .4,
-                    ["==", ["get", "PlanCntr"], .5],
+                    ["==", ["get", "plancntr"], .5],
                     .8,
                     0
                   ],
@@ -1053,7 +1053,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=LOTTR+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=LOTTR+%3E+0&outFields=LOTTR&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1064,27 +1064,27 @@ inputs[i].onclick = switchLayer;
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "LOTTR"], .5],
+                    ["==", ["get", "lottr"], .5],
                     "#f5b041",
-                    ["==", ["get", "LOTTR"], 1],
+                    ["==", ["get", "lottr"], 1],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "LOTTR"], .5],
+                    ["==", ["get", "lottr"], .5],
                     6,
-                    ["==", ["get", "LOTTR"], 1],
+                    ["==", ["get", "lottr"], 1],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "LOTTR"], .5],
+                    ["==", ["get", "lottr"], .5],
                     .4,
-                    ["==", ["get", "LOTTR"], 1],
+                    ["==", ["get", "lottr"], 1],
                     .8,
                     0
                   ],
@@ -1096,7 +1096,7 @@ map.addLayer({
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=PHED+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PHED+%3E+0&outFields=PHED&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1107,27 +1107,27 @@ map.addLayer({
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "PHED"], .5],
+                    ["==", ["get", "phed"], .5],
                     "#f5b041",
-                    ["==", ["get", "PHED"], 1],
+                    ["==", ["get", "phed"], 1],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "PHED"], .5],
+                    ["==", ["get", "phed"], .5],
                     6,
-                    ["==", ["get", "PHED"], 1],
+                    ["==", ["get", "phed"], 1],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "PHED"], .5],
+                    ["==", ["get", "phed"], .5],
                     .4,
-                    ["==", ["get", "PHED"], 1],
+                    ["==", ["get", "phed"], 1],
                     .8,
                     0
                   ],
@@ -1139,7 +1139,7 @@ map.addLayer({
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_CriteriaNetwork/FeatureServer/0/query?where=TTTR+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTTR+%3E+0&outFields=TTTR&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1150,27 +1150,27 @@ map.addLayer({
              "line-color":
                   [
                   "case",
-                    ["==", ["get", "TTTR"], .5],
+                    ["==", ["get", "tttr"], .5],
                     "#f5b041",
-                    ["==", ["get", "TTTR"], 1],
+                    ["==", ["get", "tttr"], 1],
                     "#cb4335",
                     "#cccccc"
                   ],
               "line-width":
                   [
                   "case",
-                    ["==", ["get", "TTTR"], .5],
+                    ["==", ["get", "tttr"], .5],
                     6,
-                    ["==", ["get", "TTTR"], 1],
+                    ["==", ["get", "tttr"], 1],
                     2,
                     0
                   ],
                      "line-opacity":
                   [
                   "case",
-                    ["==", ["get", "TTTR"], .5],
+                    ["==", ["get", "tttr"], .5],
                     .4,
-                    ["==", ["get", "TTTR"], 1],
+                    ["==", ["get", "tttr"], 1],
                     .8,
                     0
                   ],
