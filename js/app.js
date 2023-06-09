@@ -32,8 +32,8 @@ function legendraw8(element) {
      //   $("#SurveyModal").modal("show");
         window.open("https://dvrpcgis.maps.arcgis.com/apps/MapSeries/index.html?appid=732efbf95f76489598277df671b5d6b2");
       }
-     var CMP_PA = 'https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_SubcorridorsEmergingCorridors/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
-    var CMP_NJ = 'https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/CMP_SubcorridorsEmergingCorridors/FeatureServer/1/query?where=1%3D1&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
+     var CMP_PA = 'https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_CorridorSubCorridorAreas/FeatureServer/0/query?where=state=%27PA%27&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
+    var CMP_NJ = 'https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_CorridorSubCorridorAreas/FeatureServer/0/query?where=state=%27NJ%27&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
     var allIDs = [];
     var filterGroup = document.getElementById('filter-group');
     var layerID;
@@ -242,9 +242,9 @@ inputs[i].onclick = switchLayer;
          //   console.log(data.features)
 
             data.features.forEach(function(feature) {
-              var CMP_ID = feature.properties['CMP_ID'];
+              var CMP_ID = feature.properties['cmp_id'];
               var layerID = 'PA'+ CMP_ID;
-              console.log(layerID)
+              // console.log(layerID)
           //    allIDs.push(layerID)
 
               // Add a layer for this symbol type if it hasn't been added already.
@@ -258,29 +258,29 @@ inputs[i].onclick = switchLayer;
                       'paint': {
                       'fill-color': [
                           "case",
-                          ["==", ["get", "CMP_ID"], 1],"#92D3C8",
-                          ["==", ["get", "CMP_ID"], 2],"#F37D80",
-                          ["==", ["get", "CMP_ID"], 3],"#FBF7C0",
-                          ["==", ["get", "CMP_ID"], 4],"#F9BDBF",
-                          ["==", ["get", "CMP_ID"], 5],"#FFD380",
-                          ["==", ["get", "CMP_ID"], 6],"#C7E6DC",
-                          ["==", ["get", "CMP_ID"], 7],"#D7C19E",
-                          ["==", ["get", "CMP_ID"], 8],"#82D4F2",
-                          ["==", ["get", "CMP_ID"], 9],"#DABEDB",
-                          ["==", ["get", "CMP_ID"], 10],"#B57DB6",
-                          ["==", ["get", "CMP_ID"], 11],"#FAF078",
-                          ["==", ["get", "CMP_ID"], 12],"#DB7DB3",
-                          ["==", ["get", "CMP_ID"], 13],"#D7D79E",
-                          ["==", ["get", "CMP_ID"], 14],"#80AEDD",
-                          ["==", ["get", "CMP_ID"], 15],"#9DCB3B",
-                          ["==", ["get", "CMP_ID"], 16],"#FFEBBE",
-                          ["==", ["get", "CMP_ID"], 17],"#39BF7C",
+                          ["==", ["get", "cmp_id"], 1],"#92D3C8",
+                          ["==", ["get", "cmp_id"], 2],"#F37D80",
+                          ["==", ["get", "cmp_id"], 3],"#FBF7C0",
+                          ["==", ["get", "cmp_id"], 4],"#F9BDBF",
+                          ["==", ["get", "cmp_id"], 5],"#FFD380",
+                          ["==", ["get", "cmp_id"], 6],"#C7E6DC",
+                          ["==", ["get", "cmp_id"], 7],"#D7C19E",
+                          ["==", ["get", "cmp_id"], 8],"#82D4F2",
+                          ["==", ["get", "cmp_id"], 9],"#DABEDB",
+                          ["==", ["get", "cmp_id"], 10],"#B57DB6",
+                          ["==", ["get", "cmp_id"], 11],"#FAF078",
+                          ["==", ["get", "cmp_id"], 12],"#DB7DB3",
+                          ["==", ["get", "cmp_id"], 13],"#D7D79E",
+                          ["==", ["get", "cmp_id"], 14],"#80AEDD",
+                          ["==", ["get", "cmp_id"], 15],"#9DCB3B",
+                          ["==", ["get", "cmp_id"], 16],"#FFEBBE",
+                          ["==", ["get", "cmp_id"], 17],"#39BF7C",
                           "#cccccc"
                         ],
                          'fill-outline-color' :['case',['boolean', ['feature-state', 'hover'], false],"#000000","#7c7c7c" ],
                         'fill-opacity' :['case',['boolean', ['feature-state', 'hover'], false],1,0.8]
                       },
-                     'filter': ['==', 'CMP_ID', CMP_ID]
+                     'filter': ['==', 'cmp_id', CMP_ID]
                   },
                   firstSymbolId
     
@@ -302,7 +302,7 @@ inputs[i].onclick = switchLayer;
           //  console.log(data.features)
 
             data.features.forEach(function(feature) {
-              var CMP_ID = feature.properties['CMP_ID'];
+              var CMP_ID = feature.properties['cmp_id'];
               var layerID = 'NJ'+ CMP_ID;
           //    console.log(layerID)
           //    allIDs.push(layerID)
@@ -318,29 +318,29 @@ inputs[i].onclick = switchLayer;
                       'paint': {
                       'fill-color': [
                           "case",
-                          ["==", ["get", "CMP_ID"], 1],"#82D4F2",
-                          ["==", ["get", "CMP_ID"], 2],"#37C2F1",
-                          ["==", ["get", "CMP_ID"], 3],"#B57DB6",
-                          ["==", ["get", "CMP_ID"], 4],"#92D3C8",
-                          ["==", ["get", "CMP_ID"], 5],"#D7C19E",
-                          ["==", ["get", "CMP_ID"], 6],"#F9BDBF",
-                          ["==", ["get", "CMP_ID"], 7],"#8BC867",
-                          ["==", ["get", "CMP_ID"], 8],"#FEEAAE",
-                          ["==", ["get", "CMP_ID"], 9],"#D7B09E",
-                          ["==", ["get", "CMP_ID"], 10],"#FFD380",
-                          ["==", ["get", "CMP_ID"], 11],"#92D3C8",
-                          ["==", ["get", "CMP_ID"], 12],"#F4C0D9",
-                          ["==", ["get", "CMP_ID"], 13],"#DABEDB",
-                          ["==", ["get", "CMP_ID"], 14],"#F5CA7A",
-                          ["==", ["get", "CMP_ID"], 15],"#D3FFBE",
-                          ["==", ["get", "CMP_ID"], 16],"#00E6A9",
-                          ["==", ["get", "CMP_ID"], 17],"#FFFF00",
+                          ["==", ["get", "cmp_id"], 1],"#82D4F2",
+                          ["==", ["get", "cmp_id"], 2],"#37C2F1",
+                          ["==", ["get", "cmp_id"], 3],"#B57DB6",
+                          ["==", ["get", "cmp_id"], 4],"#92D3C8",
+                          ["==", ["get", "cmp_id"], 5],"#D7C19E",
+                          ["==", ["get", "cmp_id"], 6],"#F9BDBF",
+                          ["==", ["get", "cmp_id"], 7],"#8BC867",
+                          ["==", ["get", "cmp_id"], 8],"#FEEAAE",
+                          ["==", ["get", "cmp_id"], 9],"#D7B09E",
+                          ["==", ["get", "cmp_id"], 10],"#FFD380",
+                          ["==", ["get", "cmp_id"], 11],"#92D3C8",
+                          ["==", ["get", "cmp_id"], 12],"#F4C0D9",
+                          ["==", ["get", "cmp_id"], 13],"#DABEDB",
+                          ["==", ["get", "cmp_id"], 14],"#F5CA7A",
+                          ["==", ["get", "cmp_id"], 15],"#D3FFBE",
+                          ["==", ["get", "cmp_id"], 16],"#00E6A9",
+                          ["==", ["get", "cmp_id"], 17],"#FFFF00",
                           "#cccccc"
                         ],
                         'fill-outline-color' :['case',['boolean', ['feature-state', 'hover'], false],"#000000","#7c7c7c" ],
                         'fill-opacity' :['case',['boolean', ['feature-state', 'hover'], false],1,0.8]
                       },
-                     'filter': ['==', 'CMP_ID', CMP_ID]
+                     'filter': ['==', 'cmp_id', CMP_ID]
                   },
                     firstSymbolId
                   );
@@ -1371,7 +1371,7 @@ map.addLayer({
 
         });
 
-        // CMP Corricor Query
+        // CMP Corridor Query
         map.on('click', function (e) {
         //  (resetInfo)? $('#cmp_info').hide() : resetInfo = true;
             var bbox = [[e.point.x - 5, e.point.y - 5],[e.point.x + 5, e.point.y + 5]];
@@ -1387,14 +1387,14 @@ map.addLayer({
               var contentCMP = '';
 
               for(var i = 0; i<features.length; i++) {
-                var cmp = features[i].properties.CMP_ID
-                var subid = features[i].properties.SUB_ID 
-                var banner = features[i].properties.WEB_COLOR
-                var name = features[i].properties.NAME
-                var subname = features[i].properties.SUBNAME
-                var priority = features[i].properties.PRIORITY
-                var shield = features[i].properties.SHIELD
-                var state = features[i].properties.STATE
+                var cmp = features[i].properties.cmp_id
+                var subid = features[i].properties.sub_id 
+                var banner = features[i].properties.web_color
+                var name = features[i].properties.name
+                var subname = features[i].properties.subname
+                var priority = features[i].properties.priority
+                var shield = features[i].properties.shield
+                var state = features[i].properties.state
 
 
             var newSet = '<h4 style="color:white;background-color:' + banner + '"><div class="label"><img class="shield" src="' + shield + ' ">' + name + '</div></h4>' + "<div class='labelfield'><b>Subcorridor ID/Name: </b>" + cmp + subid + " - " + subname + "<br>" + "<div class='labelfield'><b>Priority Subcorridor: </b>" + priority + "</div>" +
@@ -1417,7 +1417,7 @@ map.addLayer({
         var hoverTooltip = function(e) {
             popup
             .setLngLat(e.lngLat)
-            .setHTML(e.features.map(function(feature) { return feature.properties.NAME + ' ('+ feature.properties.GIS_ID +')'; }).join(', '))
+            .setHTML(e.features.map(function(feature) { return feature.properties.name + ' ('+ feature.properties.gis_id +')'; }).join(', '))
             .addTo(map);
 
             currentHover = e.features[0].id;
@@ -1456,7 +1456,7 @@ map.addLayer({
         var hoverTooltipNJ = function(e) {
             popup
             .setLngLat(e.lngLat)
-            .setHTML(e.features.map(function(feature) { return feature.properties.NAME + '('+ feature.properties.GIS_ID +')'; }).join(', '))
+            .setHTML(e.features.map(function(feature) { return feature.properties.name + '('+ feature.properties.gis_id +')'; }).join(', '))
             .addTo(map);
 
             currentHover = e.features[0].id;
