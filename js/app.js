@@ -358,7 +358,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTI+%3E+0&outFields=tti&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTI+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -402,7 +402,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=LRP_VC+%3E+0&outFields=lrp_vc&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=LRP_VC+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -445,7 +445,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TransScore>+0+or+RailPoint+>+0&outFields=TransScore,RailPoint&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TransScore>+0+or+RailPoint+>+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -497,7 +497,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PTI+%3E+0&outFields=pti&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PTI+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -541,7 +541,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=NHSPoint%3E+0+or+TransitPoi+%3E+0+or+RailLinePo+%3E+0&outFields=NHSPoint,TransitPoi,RailLinePo&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=NHSPoint%3E+0+or+TransitPoi+%3E+0+or+RailLinePo+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -556,14 +556,14 @@ inputs[i].onclick = switchLayer;
                     "any",
                     ["==", ["get", "nhspoint"], 0],
                     ["==", ["get", "freightpo"], .5],
-                    ["==", ["get", "RailLinePo"], .5]
+                    ["==", ["get", "raillinepo"], .5]
                     ],
                     "#cb4335",
                     [
                      "any",
                     ["==", ["get", "nhspoint"], .5],
                     ["==", ["get", "freightpo"], 1],
-                    ["==", ["get", "RailLinePo"], 1]
+                    ["==", ["get", "raillinepo"], 1]
                     ],
                     "#cb4335",
                     "#cccccc"
@@ -571,9 +571,9 @@ inputs[i].onclick = switchLayer;
               "line-width":
                   [
                   "case",
-                    ["any",["==", ["get", "nhspoint"], .0],["==", ["get", "freightpo"], .5],["==", ["get", "RailLinePo"], .5]],
+                    ["any",["==", ["get", "nhspoint"], .0],["==", ["get", "freightpo"], .5],["==", ["get", "raillinepo"], .5]],
                     2,
-                    ["any",["==", ["get", "nhspoint"], .5],["==", ["get", "freightpo"], 1],["==", ["get", "RailLinePo"], 1]],
+                    ["any",["==", ["get", "nhspoint"], .5],["==", ["get", "freightpo"], 1],["==", ["get", "raillinepo"], 1]],
                     2,
                     0
                   ],
@@ -582,7 +582,7 @@ inputs[i].onclick = switchLayer;
                   "case",
                   ["any",["==", ["get", "nhspoint"], .0],["==", ["get", "freightpo"], .5]],
                     .4,
-                  ["any",["==", ["get", "nhspoint"], .5],["==", ["get", "freightpo"], 1],["==", ["get", "RailLinePo"], 1]],
+                  ["any",["==", ["get", "nhspoint"], .5],["==", ["get", "freightpo"], 1],["==", ["get", "raillinepo"], 1]],
                     .4,
                     0
                   ],
@@ -594,7 +594,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TransitPoi+%3E+0&outFields=transitpoi&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TransitPoi+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -637,7 +637,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HighCrSev+%3E+0&outFields=HighCrSev&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HighCrSev+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -680,7 +680,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HighCrFreq+%3E+0&outFields=HighCrFreq&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HighCrFreq+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -723,7 +723,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTTI+%3E+0&outFields=TTTI&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTTI+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -766,7 +766,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HvyTran+%3E+0+OR+Limerick+%3E+0+OR+MajBridge+%3E+0+OR+Bridges+%3E+0+OR+Military+%3E+0&outFields=HvyTran,Limerick,MajBridge,Bridges,Military&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HvyTran+%3E+0+OR+Limerick+%3E+0+OR+MajBridge+%3E+0+OR+Bridges+%3E+0+OR+Military+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -851,7 +851,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HHDen+%3E+0+OR+EmpDen+%3E+0+OR+StadGathr+%3E+0&outFields=HHDen,EmpDen,StadGathr&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=HHDen+%3E+0+OR+EmpDen+%3E+0+OR+StadGathr+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -924,7 +924,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=ENV+%3E+0&outFields=ENV&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=ENV+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -967,7 +967,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=InfEmerg+%3E+0&outFields=InfEmerg&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=InfEmerg+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1010,7 +1010,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PlanCntr+%3E+0&outFields=PlanCntr&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PlanCntr+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1053,7 +1053,7 @@ inputs[i].onclick = switchLayer;
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=LOTTR+%3E+0&outFields=LOTTR&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=LOTTR+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1096,7 +1096,7 @@ map.addLayer({
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PHED+%3E+0&outFields=PHED&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=PHED+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1139,7 +1139,7 @@ map.addLayer({
           type: "line",
           source: {
               "type": "geojson",
-              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTTR+%3E+0&outFields=TTTR&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
+              "data":"https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_ObjectiveMeasureScoring/FeatureServer/0/query?where=TTTR+%3E+0&outFields=*&returnGeometry=true&geometryPrecision=8&outSR=4326&f=geojson"
           },
           layout: {
               "visibility":"none",
@@ -1244,33 +1244,33 @@ map.addLayer({
            //    console.log(feature);
            //   var feature = features[0];
 
-              var roadname = features[i].properties.RoadName
-              var dir = features[i].properties.Bearing
-              var tti = features[i].properties.TTI
-              var tti_info = numeral(features[i].properties.TTIHGHPKHR).format('(0,0.0)')
-              var vc = features[i].properties.LRP_VC
-              var transcore = features[i].properties.TransScore
-              var rail = features[i].properties.RailPoint
-              var pti = features[i].properties.PTI
-              var pti_info = numeral(features[i].properties.PTIHGHPKHR).format('(0,0.0)')
-              var nhs = features[i].properties.NHSPoint
-              var transit = features[i].properties.TransitPoi 
-              var crash1 = features[i].properties.HighCrSev
-              var crash2 = features[i].properties.HighCrFreq
-              var ttti = features[i].properties.TTTI
-              var security = features[i].properties.HvyTran
-              var evac = features[i].properties.HHDen
-              var green = features[i].properties.Env
-              var infill = features[i].properties.InfEmerg
-              var landuse = features[i].properties.PlanCntr
-              var lottr = features[i].properties.LOTTR
-              var phed = features[i].properties.PHED
-              var tttr = features[i].properties.TTTR
+              var roadname = features[i].properties.roadname
+              var dir = features[i].properties.bearing
+              var tti = features[i].properties.tti
+              var tti_info = numeral(features[i].properties.ttihghpkhr).format('(0,0.0)')
+              var vc = features[i].properties.lrp_vc
+              var transcore = features[i].properties.transscore
+              var rail = features[i].properties.railpoint
+              var pti = features[i].properties.pti
+              var pti_info = numeral(features[i].properties.ptihghpkhr).format('(0,0.0)')
+              var nhs = features[i].properties.nhspoint
+              var transit = features[i].properties.transitpoi 
+              var crash1 = features[i].properties.highcrsev
+              var crash2 = features[i].properties.highcrfreq
+              var ttti = features[i].properties.ttti
+              var security = features[i].properties.hvytran
+              var evac = features[i].properties.hhden
+              var green = features[i].properties.env
+              var infill = features[i].properties.infemerg
+              var landuse = features[i].properties.plancntr
+              var lottr = features[i].properties.lottr
+              var phed = features[i].properties.phed
+              var tttr = features[i].properties.tttr
 
-              if (features[i].properties.Bearing === 'N' ){ var dirT = " (North Bound)"; }
-              else if (features[i].properties.Bearing === 'S' ){ var dirT = " (South Bound) ";}
-              else if (features[i].properties.Bearing === 'E' ){ var dirT = " (East Bound) ";}
-              else if (features[i].properties.Bearing === 'W' ){ var dirT = " (West Bound) " ;}
+              if (features[i].properties.bearing === 'N' ){ var dirT = " (North Bound)"; }
+              else if (features[i].properties.bearing === 'S' ){ var dirT = " (South Bound) ";}
+              else if (features[i].properties.bearing === 'E' ){ var dirT = " (East Bound) ";}
+              else if (features[i].properties.bearing === 'W' ){ var dirT = " (West Bound) " ;}
               else var dirT = "";
 
               var newSet = '<div id="pm_info"><h3 style="background-color:#E0E0E0"><i class="glyphicon glyphicon-stats"></i>&nbsp; CMP Objective Measures</h3>The scores below are for the selected roadway segments<br>' +
