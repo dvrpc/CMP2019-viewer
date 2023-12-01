@@ -365,9 +365,7 @@ cursor: ew-resize;
             </span>
         </div>
 		  <ul class="nav navbar-nav navbar-right">   
-          <!--  <button type="button" style=" margin:10px 30px 0px 4px;float:right;color:#0084C8;background-color:#ddd;" class="btn btn-sm"<a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#dataModal').modal('show'); return false;"><i class="glyphicon glyphicon-download-alt" style="color:#0084C8"></i>&nbsp;&nbsp;<b>Access Data</b></a></button> -->
             <button type="button" style=" margin:10px 30px 0px 0px;float:right;color:#0084C8;background-color:#ddd;" class="btn btn-sm" <a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="surveylaunch(); return false;"><i class="icon-globe" style="color:#0084C8"></i>&nbsp;&nbsp;<b>AGOL App</b></a></button>   
-
             <button type="button" style=" margin:10px 10px 0px 4px;float:right;color:#0084C8;background-color:#ddd;" class="btn btn-sm"<a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#HowModal').modal('show'); return false;"><i class="icon-question-sign" style="color:#0084C8"></i>&nbsp;&nbsp;<b>How to Use</b></a></button>          
             <button type="button" style=" margin:10px 10px 0px 4px;float:right;color:#0084C8;background-color:#ddd;" class="btn btn-sm"<a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="icon-info-sign" style="color:#0084C8"></i>&nbsp;&nbsp;<b>About</b></a></button>
          </ul>
@@ -377,7 +375,7 @@ cursor: ew-resize;
 		<div class="col-sm-5 col-lg-5" id="sidebar" style="padding: 10px; overflow: auto;">
 			 <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a href="#layers" data-toggle="tab"><i class="glyphicon glyphicon-road"></i>&nbsp;CMP Corridors</a></li>
-                <li id="PMBtn"><a href="#help" data-toggle="tab"><i class="glyphicon glyphicon-stats"></i>&nbsp;CMP Objective Measures</a></li>
+                <!-- <li id="PMBtn"><a href="#help" data-toggle="tab"><i class="glyphicon glyphicon-stats"></i>&nbsp;CMP Objective Measures</a></li> -->
 				<li><a href="#Results" data-toggle="tab" ><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Info</a></li>
             </ul>
 		<div class="tab-content" style="padding-top: 10px;">
@@ -550,7 +548,7 @@ cursor: ew-resize;
 
                     			<div id="overlay-layers" class="panel-collapse collapse in" >		
                     				<div class="panel-body" style="padding: 20px 0px 0px 0px;">		
-                                        <span id="click_help" class="text-muted">&nbsp;(Click subcorridor or roadway for information)</span> 
+                                        <span id="click_help" class="text-muted">&nbsp;(Click subcorridor for information)</span> 
                                         <span id="cmp_info" style="display:none"><h3 style="text-align:center;background-color:#E0E0E0;margin: 0px 25px 0px 25px;"><i class="glyphicon glyphicon-road"></i>&nbsp;CMP Subcorridor Information</h3></span>     
                     				    <div id="infosidebar"style="padding:10px"></div>
                                         <div id="selectedFeatures" style="width: auto;margin: 10px 10px 10px 15px;">&nbsp;</div>			
