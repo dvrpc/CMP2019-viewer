@@ -2,7 +2,7 @@
 // this code is dirty and messy and not going to clean it up
 function surveylaunch(element) {
 //   $("#SurveyModal").modal("show");
-window.open("https://dvrpcgis.maps.arcgis.com/apps/MapSeries/index.html?appid=732efbf95f76489598277df671b5d6b2");
+window.open("https://dvrpcgis.maps.arcgis.com/apps/MapSeries/index.html?appid=b2b9f9a42dd84f36a4059db56c89b19e");
 }
 
 var CMP_PA = 'https://arcgis.dvrpc.org/portal/rest/services/Transportation/cmp2023_corridorareas/FeatureServer/0/query?where=state=%27PA%27&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';

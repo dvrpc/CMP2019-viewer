@@ -12,6 +12,20 @@
     label {
         font-weight: normal;
     }
+    :root {
+        --padding-half: 5px;
+        --padding: 10px;
+        --padding-2: 20px;
+      
+        --border-radius: 4px;
+        --box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+        --box-shadow-nav: 1px 2px 3px rgba(0, 0, 0, 0.3);
+        --box-shadow-half: 0.5px 1px 1.5px rgba(0, 0, 0, 0.15);
+      }
+      .flex-row {
+        display: flex;
+        align-items: center;
+      }
     .panel-heading a:hover {
         text-decoration: none;
     }
@@ -64,9 +78,9 @@
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
     }
-    .modal-header {
+    /* .modal-header {
      background-color:;
-    }
+    } */
     .modal-title  {
     color: white;
     }
@@ -80,11 +94,8 @@
         opacity: 1;
     }
     .panel-primary >.panel-heading {
-    background-color:;
+    /* background-color:; */
     color: black;
-    }
-    .panel-primary {
-        border-color: ;
     }
     .media{
     padding: 0px 10px 0px 10px;
@@ -167,8 +178,7 @@
     a.one, a.one:hover, a.one:focus {
             color: #0084C8;
             text-decoration:underline;
-            }   
-    .
+    }   
     .navbar-inverse .navbar-nav > .dropdown > a .caret {
         border-top-color: white;
         border-bottom-color: white;
@@ -261,7 +271,7 @@
     border:none;
     }
     input[type=range] {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     height:130px;
     cursor: pointer;
     }
@@ -321,27 +331,87 @@
     #reduceTabs {
         border-bottom: 0px solid black;
     }  
-    .legend-red {
-        color: #FA3411;
-        font-size: 20px;
-        vertical-align: top;
-    }
-    .legend-orange {
-        color: #FFBA30;
-        font-size: 20px;
-        vertical-align: top;
-    }
-    .legend-blue{
-        color: #00A8DF;
-        font-size: 20px;
-        vertical-align: top;
-    }
-    .legend-green {
-        color: #87BB40;
-        font-size: 20px;
-        vertical-align: top;
-    }
+    
+    .legend-box-item {
+        margin-left: 22px;
+        margin-top: -5px;
+        width: 100%;
+      }
+    .legend-icon {
+        width: 25px;
+        height: 25px;
+        margin-right: var(--padding-half);
+        border-radius: 4px;
+      }
+      .legend-icon:last-child {
+        margin-bottom: 0;
+      }
+      /* Score Colors */
+      .pop-1 {
+        background: #35978f;
+      }
     a.zoomToCMP:link {color:#333;font-size: 11px;cursor: pointer;}
     a.zoomToCMP:visited {color:#333;font-size: 11px;cursor: pointer;}
     a.zoomToCMP:hover {color:#333;font-size: 11px;cursor: pointer;}
     .leaflet-fade-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-zoom-animated { will-change:auto !important; }
+    .map-overlay {
+        font: bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        position: absolute;
+        width: 25%;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        }
+         
+        .map-overlay .map-overlay-inner {
+        background-color: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        padding: 10px;
+        margin-bottom: 10px;
+        }
+         
+        .map-overlay label {
+        display: block;
+        margin: 0 0 10px;
+        }
+         
+        .map-overlay input {
+        background-color: transparent;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        cursor: ew-resize;
+        }
+        #zoomtoregion{
+            position: absolute;
+            top:160px;
+            right:12px;
+            z-index:100;
+            background-color:white;
+            color:black;
+            padding:6px;
+            border-radius:4px;
+            font-family: 'Helvetica Neue';
+            cursor: pointer;
+            font-size:10px;
+            text-decoration:none;
+            background-image: url(https://raw.githubusercontent.com/dvrpc/license-plate-survey/master/src/img/dvrpc_bug.png);
+            background-size: 22px 22px;
+            background-position: center; 
+            background-repeat: no-repeat;
+            height: 27px;
+            width: 27px;
+            }
+            #zoomtoregion:hover{
+            background-color: #ddd;
+            }
+            #menu {
+            position: absolute;
+            top:0px;
+                z-index:100;
+            background: #fff;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+            }
