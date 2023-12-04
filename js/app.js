@@ -5,7 +5,9 @@ function surveylaunch(element) {
 window.open("https://dvrpcgis.maps.arcgis.com/apps/MapSeries/index.html?appid=732efbf95f76489598277df671b5d6b2");
 }
 
-var CMP_PA = 'https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_CorridorSubCorridorAreas/FeatureServer/0/query?where=state=%27PA%27&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
+var CMP_PA = 'https://arcgis.dvrpc.org/portal/rest/services/Transportation/cmp2023_corridorareas/FeatureServer/0/query?where=state=%27PA%27&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
+
+
 
 var CMP_NJ = 'https://arcgis.dvrpc.org/portal/rest/services/Transportation/CMP2019_CorridorSubCorridorAreas/FeatureServer/0/query?where=state=%27NJ%27&outFields=*&returnGeometry=true&geometryPrecision=4&outSR=4326&f=geojson';
 
@@ -251,7 +253,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY3J2YW5wb2xsYXJkIiwiYSI6Ii00ZklVS28ifQ.Ht4KwA
 
   slider.addEventListener('input', function(e) {
     //slide(e);
-    let a = ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17'];
+    let a = ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','PA18','PA19','PA20','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17'];
   for (let index = 0; index < a.length; ++index) {
       let value = a[index];
         map.setPaintProperty(value,'fill-opacity',parseInt(e.target.value, 10) / 100);
@@ -297,7 +299,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY3J2YW5wb2xsYXJkIiwiYSI6Ii00ZklVS28ifQ.Ht4KwA
         map.on('click', function (e) {
         //  (resetInfo)? $('#cmp_info').hide() : resetInfo = true;
             var bbox = [[e.point.x - 5, e.point.y - 5],[e.point.x + 5, e.point.y + 5]];
-            var features = map.queryRenderedFeatures(bbox, {layers: ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17']});
+            var features = map.queryRenderedFeatures(bbox, {layers: ['PA1','PA2','PA3','PA4','PA5','PA6','PA7','PA8','PA9','PA10','PA11','PA12','PA13','PA14','PA15','PA16','PA17','PA18','PA19','PA20','NJ1','NJ2','NJ3','NJ4','NJ5','NJ6','NJ7','NJ8','NJ9','NJ10','NJ11','NJ12','NJ13','NJ14','NJ15','NJ16','NJ17']});
 
               if (!features.length) {
                   //  var contentCMP = '';
